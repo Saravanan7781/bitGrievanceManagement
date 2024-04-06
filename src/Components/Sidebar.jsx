@@ -24,8 +24,9 @@ function Sidebar() {
       <div className={`sidebarContent ${showSidebar ? 'show' : ''}`}>
       <ul className="sidebarElements"  >
           <li>
-            <div  className="sidebarInnerEle">
+            <div className="sidebarInnerEle">
               <a href="#"><GoInbox size={25} /></a>
+              
             </div >
           </li>
           <li>

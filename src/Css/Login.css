@@ -1,0 +1,139 @@
+.loginPage{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100dvh;
+    
+}
+
+.loginCaption{
+    position: absolute;
+    top: 0;
+    left: 20%;
+    margin: 1.5rem 0 0 0 ;
+}
+
+.loginContainer{
+    border: 3px solid transparent;
+    border-radius: 2.5rem;
+    background-color: rgb(255, 255, 255);
+    height: 55dvh;
+    width: 50dvw;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 0 0 3vw;
+    align-items: center;
+    position: relative;
+  font-family: "Space Grotesk", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.loginContainerDummy{
+    height: inherit;
+    width: 60%;
+    border-radius: 7vw 2.5rem 2.5rem 7vw;
+    border: 1px solid #8869f4;
+    background-color: #8769f49b;
+    /* display: flex; */
+    /* justify-self: flex-end; */
+
+}
+
+.loginContent{
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+    justify-content: center;
+      height: 33dvh;
+      width: 30%;
+      align-items: center;
+      /* border: 3px solid black; */
+      margin: 0 2rem 0 2rem;
+}
+
+.loginContent input:not(button){
+    height: 30px;
+    width: 100%;
+    border-radius: 0.3rem;
+    padding-left: 10px;
+    font-size: 1rem;
+   border: none;
+border-bottom: 1px solid #8869f4; 
+}
+
+.loginContent  input:focus {
+    outline: none; 
+     border: #8769f49b;
+   border-bottom: 2px solid #7a55ff; 
+  }
+
+
+
+.loginContent button{
+    margin-block-start: 5vh;
+    height: 40px;
+    width: 100px;
+    border-radius: .5rem;
+    border: none;
+    background-color: #e1e3ff;
+    cursor: pointer;
+    
+}
+
+/* .loginContent button {
+    margin-block-start: 5vh;
+    height: 40px;
+    width: 100px;
+    border-radius: .5rem;
+    border: none;
+    background-color: #e1e3ff;
+    cursor: pointer;
+} */
+
+.submitButton{
+    position: relative;
+}
+
+.submitButtonMain{
+    height: 3vh;
+}
+
+
+.submitButtonAnimationBefore {
+    height: inherit; 
+    width: inherit; 
+    border-radius: .5rem; 
+    padding: .7rem 0 0 0; 
+    transition: 1s all ease; 
+    clip-path: circle(50% at  0 0); 
+    background-color: #8869f4; 
+    position: relative;
+    overflow: hidden; 
+}
+
+.submitButtonAnimationAfter {
+    clip-path: circle(150%);
+}
+
+.spanSubmit{
+    position: absolute; 
+    z-index: 111;
+    color: black;
+    left: 24%;
+    top: 32%;
+    font-weight: 300;
+}
+
+
+.submitButtonAnimation:hover {
+    background-color: #8869f4; 
+    clip-path: circle(100%); 
+    
+}
+
+
+.loginContent input::placeholder {
+    padding-left: 10px;
+}

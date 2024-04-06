@@ -38,7 +38,7 @@ const userAuth = async (req,res) =>{
                 code: 0
             })
         }
-    }``
+    }
     catch (err){
         console.log("Some Thing Went Wrong...")
         console.log(err)

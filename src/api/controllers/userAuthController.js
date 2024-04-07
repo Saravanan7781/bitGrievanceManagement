@@ -11,8 +11,6 @@ function createSessionId() {
 
 
 
-
-
 const userAuth = async (req,res) =>{
     try{
         const { username, password } = req.body;

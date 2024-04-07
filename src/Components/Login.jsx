@@ -1,11 +1,18 @@
 import React, { useState } from 'react'
 import '../Css/Login.css'
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
+import { FaRegUser } from "react-icons/fa";
+import { IoLockClosedOutline } from "react-icons/io5";
+import { IoLockOpenOutline } from "react-icons/io5";
+
 
 function Login() {
     const [hovered, setHovered] = useState(false);
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    const navigate = useNavigate();
+    const [lockAnimationOn, setLockAnimationOn] = useState(false);
 
     const mouseEnter = () => {
         return setHovered(true); 
@@ -15,9 +22,9 @@ function Login() {
         return setHovered(false);
     }
 
-    console.log(hovered);
 
-     const handleInputChange = (e) => {
+    const handleInputChange = (e) => {
+        
         if (e.target.name === 'username') {
             setUsername(e.target.value);
         } else if (e.target.name === 'password') {
@@ -27,14 +34,28 @@ function Login() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        try {
-            console.log(username);
+        // try {
+        //     console.log(username);
+        //     const response = await axios.post('http://localhost:8090/api/auth/login', {
+        //         username,
+        //         password
+        //     });
+        //     console.log(response.data);
+        // } 
+         try {
+            console.log('username' + username);
             const response = await axios.post('http://localhost:8090/api/auth/login', {
                 username,
                 password
-            });
-            console.log(response.data);
-        } catch (error) {
+            })
+             
+             if (response.data.code===1) {
+                 console.log("response data's code : " + response.data.code)
+                navigate('home')
+             }
+        } 
+        
+        catch (error) {
             console.error('Error:', error); 
         }
     };
@@ -47,14 +68,26 @@ function Login() {
             <div className='loginContainer'>
                 <h1 className='loginCaption'>Login</h1>
                 <div className="loginContent">
-                
-                
+                <div className="smallContainers"> <FaRegUser/>
                   <input type='text' name='username' id='username' placeholder='Username' autoComplete='off'
-                     onChange={handleInputChange}  required />
+                     onChange={handleInputChange}  required /></div>
+                  <div className="smallContainers">
+                      { lockAnimationOn?
+                      <IoLockOpenOutline size={23}/>
+                      :<IoLockClosedOutline size={23} />
+                      }
+                      <input type='password' name='password' id='password' placeholder='Password'
+                          autoComplete='off'
+                         
+                          onChange={(e) => {
+                              handleInputChange(e)
+                              setLockAnimationOn(true)
+                          }}
+                          onMouseLeave={ ()=>setLockAnimationOn(false)}
+                          required /></div>
+               
                     
-                  <input type='password' name='password' id='password' placeholder='Password'
-                      autoComplete='off'
-                      onChange={handleInputChange} required />
+                  
                     
                   <div className='submitButtonMain'>
                       <button type='submit'

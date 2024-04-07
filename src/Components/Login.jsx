@@ -1,10 +1,12 @@
 import React, { useState } from 'react'
+import bitLoginLogo from '../Images/bitLogo1.png';
 import '../Css/Login.css'
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import { FaRegUser } from "react-icons/fa";
-import { IoLockClosedOutline } from "react-icons/io5";
-import { IoLockOpenOutline } from "react-icons/io5";
+import { FaRegUser,FaEye,FaEyeSlash } from "react-icons/fa";
+import { FaUser } from "react-icons/fa6";
+import { IoLockOpenOutline,IoLockOpen,IoLockClosedOutline } from "react-icons/io5";
+
 
 
 function Login() {
@@ -13,6 +15,13 @@ function Login() {
     const [password, setPassword] = useState('');
     const navigate = useNavigate();
     const [lockAnimationOn, setLockAnimationOn] = useState(false);
+    const [userAnimationOn, setUserAnimationOn] = useState(false);
+    const [eyeAnimationOn, setEyeAnimationOn] = useState(false);
+    const [showEye, setShowEye] = useState(0);
+
+
+    
+    
 
     const mouseEnter = () => {
         return setHovered(true); 
@@ -30,18 +39,12 @@ function Login() {
         } else if (e.target.name === 'password') {
             setPassword(e.target.value);
         }
+        
     };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        // try {
-        //     console.log(username);
-        //     const response = await axios.post('http://localhost:8090/api/auth/login', {
-        //         username,
-        //         password
-        //     });
-        //     console.log(response.data);
-        // } 
+    
          try {
             console.log('username' + username);
             const response = await axios.post('http://localhost:8090/api/auth/login', {
@@ -68,26 +71,50 @@ function Login() {
             <div className='loginContainer'>
                 <h1 className='loginCaption'>Login</h1>
                 <div className="loginContent">
-                <div className="smallContainers"> <FaRegUser/>
-                  <input type='text' name='username' id='username' placeholder='Username' autoComplete='off'
-                     onChange={handleInputChange}  required /></div>
+                  <div className="smallContainers">
+                      {
+                          userAnimationOn?
+                              <FaUser />
+                              :<FaRegUser />
+                      }
+                      <input type='text' name='username' id='username' placeholder='Username'
+                          autoComplete='off'
+                          onBlur={() => { setUserAnimationOn(false) }}
+                          onChange={(e) => {
+                              setUserAnimationOn(true)
+                              handleInputChange(e)
+                          }} required /></div>
                   <div className="smallContainers">
                       { lockAnimationOn?
-                      <IoLockOpenOutline size={23}/>
-                      :<IoLockClosedOutline size={23} />
+                      <IoLockOpen size={25}/>
+                      :<IoLockClosedOutline size={25} />
                       }
-                      <input type='password' name='password' id='password' placeholder='Password'
+                      <input type={eyeAnimationOn?`text`:`password`}  name='password' id='password' placeholder='Password'
                           autoComplete='off'
-                         
-                          onChange={(e) => {
-                              handleInputChange(e)
-                              setLockAnimationOn(true)
-                          }}
-                          onMouseLeave={ ()=>setLockAnimationOn(false)}
-                          required /></div>
-               
-                    
-                  
+                          onBlur={() => { setLockAnimationOn(false);  }}                          
+                          onChange={(e) => { handleInputChange(e); setLockAnimationOn(true);setShowEye(1) }}
+                      //   onMouseLeave={ ()=>setLockAnimationOn(false)}
+                          
+                          
+                          required></input>
+                     
+                      <div className="icon">
+                          
+                          {
+                              showEye ? (
+                                  
+                                  
+                                  eyeAnimationOn ?
+                                  <FaEye  size={25}
+                                            onClick={(e) => { setEyeAnimationOn(!eyeAnimationOn);  }}/> :
+                                  <FaEyeSlash size={25}
+                                     onClick={(e) => { setEyeAnimationOn(!eyeAnimationOn); }}/>
+                                ):null
+                                }
+                                </div>
+                      
+                      
+                  </div>  
                     
                   <div className='submitButtonMain'>
                       <button type='submit'
@@ -99,6 +126,9 @@ function Login() {
                 
                 </div>
                 <div className="loginContainerDummy">
+                  {/* <div class="image-container">
+                      <img src={ bitLoginLogo} height= '200%' alt="" />
+                            </div> */}
 
                 </div>
             </div>

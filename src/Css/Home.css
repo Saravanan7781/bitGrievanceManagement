@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap');
+
+
+.homeMain{
+    height: 100dvh;
+    border: 3px solid firebrick;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dashboardGrid{
+    height: 50vh;
+    width: 50%;
+    border: 3px solid #8869f4;
+    border-radius: 2rem 2rem 2rem 2rem;
+    display: grid;
+    grid-template-columns: 50% 50%;
+
+}
+
+.dashboardInfos{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.info{
+    height: 80%;
+    width: 80%;
+    border: 3px solid black;
+    border-radius: 2rem 2rem 2rem 2rem;
+    text-align: center;
+    /* letter-spacing: 2px; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.info :nth-child(1){
+        font-size: 2.2rem;       
+  font-family: "Tilt Neon", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+    "XROT" 0,
+    "YROT" 0;
+
+}
+
+.info :nth-child(2){
+    font-size: 3.5rem;
+}

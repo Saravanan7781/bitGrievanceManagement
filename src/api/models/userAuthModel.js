@@ -13,6 +13,9 @@ const loginSchema = new mongoose.Schema({
     },
     password:{
         type: String
+    },
+    role:{
+        type: String
     }
 });
 

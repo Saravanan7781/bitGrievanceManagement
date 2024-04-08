@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import bitLoginLogo from '../Images/bitLogo1.png';
+import bitLoginLogo from '../Images/bitLogo.png';
 import '../Css/Login.css'
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
@@ -39,7 +39,7 @@ function Login() {
         } else if (e.target.name === 'password') {
             setPassword(e.target.value);
         }
-        
+            
     };
 
     const handleSubmit = async (e) => {
@@ -53,8 +53,11 @@ function Login() {
             })
              
              if (response.data.code===1) {
+
                  console.log("response data's code : " + response.data.code)
-                navigate('home')
+                 console.log("response data's code : " + response.data)
+                if(response.data.dbuserRole==="warden"){
+                navigate('home')}
              }
         } 
         
@@ -83,7 +86,16 @@ function Login() {
                           onChange={(e) => {
                               setUserAnimationOn(true)
                               handleInputChange(e)
-                          }} required /></div>
+                          }} required />
+                          <div className="icon">
+                       
+                                </div>
+                      
+                      
+                  </div>
+                         
+
+
                   <div className="smallContainers">
                       { lockAnimationOn?
                       <IoLockOpen size={25}/>
@@ -126,9 +138,9 @@ function Login() {
                 
                 </div>
                 <div className="loginContainerDummy">
-                  {/* <div class="image-container">
+                  <div class="image-container">
                       <img src={ bitLoginLogo} height= '200%' alt="" />
-                            </div> */}
+                            </div>
 
                 </div>
             </div>

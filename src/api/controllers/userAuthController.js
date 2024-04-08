@@ -24,10 +24,13 @@ const userAuth = async (req,res) =>{
         }
         else if (dbResult['password'] == password){
             const id = await createSessionId()
+            // console.log(role);
             return res.send({
                 msg: "Successfully logined in",
                 code: 1,
-                sessionId: id
+                sessionId: id,
+                dbResult:dbResult,
+                dbuserRole:dbResult.role,
             })
         }
         else {

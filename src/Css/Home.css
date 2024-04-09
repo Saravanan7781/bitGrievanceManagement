@@ -12,19 +12,18 @@
 
 .dashboardGrid{
     height: 50vh;
-    /* width: 50%; */
-    
+    width:   70%; 
     border-radius: 2rem 2rem 2rem 2rem;
     display: grid;
-    transform: translateX(-12%);
-    grid-template-columns: 50% 50% 50%;
-    border: 3px solid #8869f4;
+    /* transform: translateX(-12%); */
+    grid-template-columns: repeat(3, 1fr); 
+    /* border: 3px solid #8869f4; */
 
 }
 
 .dashboardInfos{
     display: flex;
-    justify-content: center;
+    /* justify-content: center; */
     flex-wrap: wrap;
     align-items: center;
 }
@@ -32,9 +31,10 @@
 .info{
     height: 80%;
     width: 80%;
-    border: 3px solid black;
+    /* border: 3px solid black; */
     border-radius: 2rem 2rem 2rem 2rem;
     text-align: center;
+    background-color:#FFFFFF;
     /* letter-spacing: 2px; */
     display: flex;
     flex-direction: column;
@@ -55,9 +55,24 @@
 
 .info :nth-child(2){
     font-size: 2.6rem;
+    
 }
 
-.infoIcons{
+.infoIcons h1{
+    font-family: "Tilt Neon", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings:
+      "XROT" 0,
+      "YROT" 0;
+}
+
+.info .infoIcons{
     color:#8b6aff;
-    font-size: 5rem;
+    font-size: 10rem;
+    /* height: 20vh; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

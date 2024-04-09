@@ -6,16 +6,19 @@
     border: 3px solid firebrick;
     display: flex;
     justify-content: center;
+   
     align-items: center;
 }
 
 .dashboardGrid{
     height: 50vh;
-    width: 50%;
-    border: 3px solid #8869f4;
+    /* width: 50%; */
+    
     border-radius: 2rem 2rem 2rem 2rem;
     display: grid;
-    grid-template-columns: 50% 50%;
+    transform: translateX(-12%);
+    grid-template-columns: 50% 50% 50%;
+    border: 3px solid #8869f4;
 
 }
 
@@ -39,7 +42,7 @@
 }
 
 .info :nth-child(1){
-        font-size: 2.2rem;       
+        /* font-size: 2.2rem;        */
   font-family: "Tilt Neon", sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
@@ -51,5 +54,10 @@
 }
 
 .info :nth-child(2){
-    font-size: 3.5rem;
+    font-size: 2.6rem;
+}
+
+.infoIcons{
+    color:#8b6aff;
+    font-size: 5rem;
 }

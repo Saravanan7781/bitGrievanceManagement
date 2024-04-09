@@ -5,10 +5,10 @@ import { MdOutlinePendingActions } from "react-icons/md";
 import { useState } from 'react';
 
 function Home() {
-  // const list = [{id:1,title:"TOTAL COMPLAINTS",total:10},{id:2,title:" RESOLVED",total:2},
-  // {id:3,title:" PENDING",total:8}]
+  const list = [{id:1,title:"TOTAL COMPLAINTS",total:10},{id:2,title:" RESOLVED",total:2},
+  {id:3,title:" PENDING",total:8}]
   const [count,setCount] = useState(0);
-  const list = [{id:1,title:"TOTAL COMPLAINTS",total:10}]
+  // const list = [{id:1,title:"TOTAL COMPLAINTS",total:10}]
   const displayGrid = () =>{
     setTimeout(()=>{
       if(count<3){
@@ -17,19 +17,21 @@ function Home() {
     }
 
     else{
-      clearInterval(displayGrid)
+      clearTimeout(displayGrid)
     }
     }
       ,1000
     )
   }
 
+
+
   displayGrid();
 
   return (
     <>
        <div className='homeMain'>
-          <div className={(count===2)?`dashboardGrid`:"displaySingle"}>
+          <div className={(count>=2)?`dashboardGrid`:"displaySingle"}>
                 {/* {
                   list.map((ele)=>(
                     

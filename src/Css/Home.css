@@ -14,11 +14,47 @@
     height: 50vh;
     width:   70%; 
     border-radius: 2rem 2rem 2rem 2rem;
-    display: grid;
+    
     /* transform: translateX(-12%); */
-    grid-template-columns: repeat(3, 1fr); 
     /* border: 3px solid #8869f4; */
+    transition: 1s ease;
+    animation: displayGrid infinite  ease-in 3s 1 direction forwards
+}
 
+
+.displaySingle{
+    position: absolute;
+    height: 50vh;
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.displaySingle .dashboardInfos{
+    display: grid;
+    grid-template-columns: 1fr;
+    /* height: 50vh; */
+    /* justify-content: center; */
+    text-align: center;
+    position: absolute;
+   
+}
+
+.displaySingle .dashboardInfos .info{
+    height: auto;
+    width: 80%;
+}
+
+.displaySingle :nth-child(1){
+    z-index: 1;
+}
+
+.displaySingle :nth-child(2){
+    z-index: -11;
+}
+.displaySingle :nth-child(3){
+    z-index: -21;
 }
 
 .dashboardInfos{
@@ -75,4 +111,16 @@
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+@keyframes displayGrid {
+    0%{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    /* height: 50vh;
+    .
+    width: 70%; */
+    
+
+}
 }

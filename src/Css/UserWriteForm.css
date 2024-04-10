@@ -1,0 +1,56 @@
+.GrievancePage{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.formOuter{
+    height: 75vh;
+    width: 85vw;
+    border: 3px solid plum;
+    transform: translateY(25%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.formInner{
+    border: 3px solid brown;
+    width: 75vw;
+    height: 70vh;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items:flex-start;
+    padding: 2% 3% 2% 3%;
+}
+
+p{
+    margin-bottom: 1%;
+    font-size: larger;
+}
+
+.dropdown{
+    background-color: white;
+    width: 15vw;
+    border-radius: 10px;
+}
+
+.dropdown ul{
+    text-decoration: none;
+    list-style-type: none;
+}
+.dropdown ul li{
+    line-height: 1.5;
+}
+.dropdownBtn{
+    border: 2px solid rgb(207, 206, 206);
+    border-radius: 10px;
+    background-color: white;
+    width: 15vw;
+    height: 6vh;  
+
+}

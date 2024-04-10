@@ -4,23 +4,25 @@ import Sidebar from './Sidebar';
 import Login from './Login'
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from './Home'
+import UserWriteForm from './UserWriteForm';
+import UserWriteForm2 from './UserWriteForm2';
 
 function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path='/home' 
-        element={
+    // <Router>
+    //   <Routes>
+    //     <Route path='/home' 
+    //     element={
           <>
         <MainHeader />
-        <Home  />
+        <UserWriteForm2  />
         </>
-        }>
-        </Route>
-        <Route path='/' element={<Login />}>
-        </Route>
-      </Routes>
-    </Router>
+    //     }>
+    //     </Route>
+    //     <Route path='/' element={<Login />}>
+    //     </Route>
+    //   </Routes>
+    // </Router>
   );
 }
 

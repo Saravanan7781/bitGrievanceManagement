@@ -10,53 +10,69 @@
     align-items: center;
 }
 
-.dashboardGrid{
+/* .dashboardGrid{
     height: 50vh;
     width:   70%; 
     border-radius: 2rem 2rem 2rem 2rem;
-    
-    /* transform: translateX(-12%); */
-    /* border: 3px solid #8869f4; */
+    transform: translateX(-12%);
+    border: 3px solid #8869f4;
     transition: 1s ease;
-    animation: displayGrid infinite  ease-in 3s 1 direction forwards
+    animation: displayGrid infinite  ease-in 3s 1 direction forwards;
+    
 }
 
 
-.displaySingle{
-    position: absolute;
-    height: 50vh;
-    width: 70%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.displaySingle .dashboardInfos{
+.dashboardGrid2{
     display: grid;
-    grid-template-columns: 1fr;
-    /* height: 50vh; */
-    /* justify-content: center; */
-    text-align: center;
+    grid-template-columns: repeat(3,1fr);
+} */
+
+.dashboardGrid {
+    display: grid;
+    height: 80%;
+    width: 30%;
+    border-radius: 2rem;
+    transition: width 3s ease-in, grid-template-columns 3s ease-in;
+    grid-template-columns: repeat(1, 1fr);
+  }
+  
+  .dashboardGrid2 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .smoothTransition{
+    transition-duration: 3s;
+    
+  }  
+
+  .info1 {
     position: absolute;
-   
-}
+    animation: displayGrid 3s linear forwards;
+    animation-delay: 3s;
+    height: 30vh;
+    width: 25%;
+  }
 
-.displaySingle .dashboardInfos .info{
-    height: auto;
-    width: 80%;
-}
-
-.displaySingle :nth-child(1){
+.info1 :nth-child(1) {
     z-index: 1;
-}
+    grid-column-start: 1;
+  }
+  
+  .info1 :nth-child(2) {
+    z-index: -1; /* Adjusted z-index */
+    animation: secondChild 3s ease-in forwards;
+    grid-column-start: 2;
+   
 
-.displaySingle :nth-child(2){
-    z-index: -11;
-}
-.displaySingle :nth-child(3){
-    z-index: -21;
-}
-
+  }
+  
+  .info1 :nth-child(3) {
+    z-index: -2; /* Adjusted z-index */
+    animation: thirdChild 3s ease-in forwards;
+    grid-column-start: 3;
+   
+  }
+  
 .dashboardInfos{
     display: flex;
     /* justify-content: center; */
@@ -66,7 +82,7 @@
 
 .info{
     height: 80%;
-    width: 80%;
+    width: 100%;
     /* border: 3px solid black; */
     border-radius: 2rem 2rem 2rem 2rem;
     text-align: center;
@@ -75,6 +91,17 @@
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+}
+
+.info1 .dashboardInfos .info{
+        height: 30vh;
+       
+}
+
+.info1 .dashboardInfos{
+    position: absolute;
+    animation: splittingBox 3s linear 3s forwards;
+
 }
 
 .info :nth-child(1){
@@ -107,7 +134,7 @@
 .info .infoIcons{
     color:#8b6aff;
     font-size: 10rem;
-    /* height: 20vh; */
+  
     display: flex;
     align-items: center;
     justify-content: center;
@@ -115,12 +142,15 @@
 
 @keyframes displayGrid {
     0%{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); 
-    /* height: 50vh;
-    .
-    width: 70%; */
-    
+       grid-template-columns: repeat(1,1fr);
+       grid-template-rows: 1fr;
+    }
 
+
+    100%{
+        grid-template-columns: repeat(3,1fr);
+        width: 70%;
+    }
 }
-}
+
+

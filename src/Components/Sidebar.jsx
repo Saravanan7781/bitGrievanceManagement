@@ -39,7 +39,7 @@ function Sidebar() {
               <a href="#"><BsGlobe2 size={22} /></a>
             </div >
           </li>
-          <li>
+          {/* <li>
             <div className="sidebarInnerEle">
               <a href="#"><GoInbox size={25} /></a>
             </div >
@@ -48,7 +48,7 @@ function Sidebar() {
             <div  className="sidebarInnerEle">
               <a href="#"><GoInbox size={25} /></a>
             </div >
-          </li>
+          </li> */}
         </ul>
         </div> 
     </div>

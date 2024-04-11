@@ -55,7 +55,7 @@ function Login() {
              if (response.data.code===1) {
 
                  console.log("response data's code : " + response.data.code)
-                 console.log("response data's code : " + response.data)
+                 console.log("response data's role : " + response.data.dbuserRole)
                 if(response.data.dbuserRole==="warden"){
                 navigate('home')}
              }

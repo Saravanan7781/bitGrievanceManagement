@@ -14,7 +14,7 @@ function Home() {
 
   return (
     <div className='homeMain'>
-      <div className={`dashboardGrid info1`}>
+      <div className={dashboardGrid info1}>
         {list.map((ele) => (
           <div className='dashboardInfos' key={ele.id}>
             <div className='info'>

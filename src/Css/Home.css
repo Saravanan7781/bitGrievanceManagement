@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap');
+
+.homeMain{
+  height: 100dvh;
+  border: 3px solid firebrick;
+  display: flex;
+  justify-content: center;
+ 
+  align-items: center;
+}
+
+.dashboardGrid {
+  width: 70vw;
+  height: 250px;
+  display: flex;
+  flex-direction: row;
+}
+.dashboardInfos{
+  width: 225px;
+  height: 250px;
+  background-color: white;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.info{
+  width: 100%;
+  height: 50px;
+  text-align: center;
+}
+.infoIcons{
+  width: 100%;
+  height: 150px;
+  color: #8b6aff;
+}
+.infoIcons svg{
+  font-size: 150px;
+}
+.dashboardGrid:nth-child(1){
+  position: absolute;
+  z-index: 3;
+}
+.dashboardInfos:nth-child(2){
+  position: absolute;
+  z-index: 2;
+  animation: move_left1 1s ease-out;
+  margin-left: 300px;
+}
+.dashboardInfos:nth-child(3){
+  position: absolute;
+  z-index: 1;
+  animation: move_left2 2s ease-out;
+  margin-left: 600px;
+}
+@keyframes move_left1 {
+  0%{margin-left: 0px;}
+  /* 50%{transform: rotateY(180deg);} */
+  100%{margin-left: 300px;}
+}
+@keyframes move_left2 {
+  0%{margin-left: 0px;}
+  /* 50%{transform: rotateY(180deg);} */
+  100%{margin-left: 600px;}
+}

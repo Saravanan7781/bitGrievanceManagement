@@ -41,7 +41,7 @@
     flex-direction: column;
     align-items: center;
      /* border: 3px dashed red; */
-     justify-content: space-around  ;
+     justify-content: space-evenly;
      width: 100%;
      /* visibility: hidden; */
 }

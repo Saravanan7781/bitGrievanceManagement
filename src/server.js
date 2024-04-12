@@ -2,6 +2,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const authRouter = require("./api/routes/userAuth");
+const userComplain = require('./api/routes/userComplainRoutes');
 
 
 // data config
@@ -31,6 +32,7 @@ const DBconnect = async() =>{
 
 // routes
 server.use("/api/auth/",authRouter)
+server.use("/api/user/",userComplain)
 
 
 

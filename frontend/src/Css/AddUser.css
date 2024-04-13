@@ -1,0 +1,18 @@
+.mainAddUser{
+    height: 100dvh;
+    width: 100%;
+    /* background-color: black; */
+    /* border: 3px solid white; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.AddUserOuter{
+        height: 60dvh;
+        width: 75%;
+        border-radius: 3ch;
+        border: 3px solid firebrick;
+        transform: translateY(10%);
+}

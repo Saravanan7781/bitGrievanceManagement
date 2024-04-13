@@ -11,10 +11,12 @@ function createSessionId() {
 
 
 
+
+
 const userAuth = async (req,res) =>{
     try{
-        const { username, password } = req.body;
-        console.log(username+" "+ password)
+        const {username, password} = req.body;
+        
         const dbResult = await loginModel.findOne({userName:username})
         if (dbResult == null){
             return res.send({
@@ -24,13 +26,10 @@ const userAuth = async (req,res) =>{
         }
         else if (dbResult['password'] == password){
             const id = await createSessionId()
-            // console.log(role);
             return res.send({
                 msg: "Successfully logined in",
                 code: 1,
-                sessionId: id,
-                dbResult:dbResult,
-                dbuserRole:dbResult.role,
+                sessionId: id
             })
         }
         else {

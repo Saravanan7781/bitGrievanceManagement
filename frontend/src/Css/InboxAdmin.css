@@ -37,7 +37,7 @@
     /* border: 3px solid  black ; */
     border-radius: 2ch;
     display: grid;
-    grid-template-columns: .2fr repeat(3,.75fr) 2fr .75fr .24fr;
+    grid-template-columns: .2fr repeat(5,.75fr) 2fr .75fr .24fr;
    border-radius: 2ch;
    background-color: #E6E6FA;
 }
@@ -116,6 +116,6 @@
 
 .inboxAdminMain{
     display: grid;
-    grid-template-columns: .2fr repeat(3,.75fr) 2fr .75fr .24fr;
+    grid-template-columns: .2fr repeat(5,.75fr) 2fr .75fr .24fr;
     
 }

@@ -2,7 +2,7 @@
 
 .homeMain{
   height: 100dvh;
-  border: 3px solid firebrick;
+  /* border: 3px solid firebrick; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -25,6 +25,7 @@
   flex-direction: column;
    column-gap: 2vh;
   align-items: center;
+  cursor: pointer;
 }
 
 .info{
@@ -64,20 +65,20 @@
   position: absolute;
   z-index: 2;
   animation: move_left1 2s ease-out;
-  margin-left: -600px;
+  margin-left: -900px;
 }
 .dashboardInfos:nth-child(3){
   position: absolute;
   z-index: 1;
   animation: move_left2 2s ease-out;
-  margin-left: 600px;
+  margin-left: 900px;
 }
 
 @keyframes move_left1 {
   0%{margin-left: 0px;}
-  100%{margin-left: -600px;}
+  100%{margin-left: -900px;}
 }
 @keyframes move_left2 {
   0%{margin-left: 0px;}
-  100%{margin-left: 600px;}
+  100%{margin-left: 900px;}
 }

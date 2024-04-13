@@ -2,20 +2,20 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const authRouter = require("./api/routes/userAuth");
-const cors = require("cors");
+const userComplain = require('./api/routes/userComplainRoutes');
 
 
+// data config
+const DB_URI = "mongodb://127.0.0.1:27017/hcr";
 
-const DB_URI = "mongodb://127.0.0.1:27017/bitGrievance";
 
-
-
+//create server
 const server = express();
 
 
 //server config
 server.use(express.json());
-server.use(cors()); 
+
 //connect to database
 const DBconnect = async() =>{
     try{
@@ -32,6 +32,7 @@ const DBconnect = async() =>{
 
 // routes
 server.use("/api/auth/",authRouter)
+server.use("/api/user/",userComplain)
 
 
 

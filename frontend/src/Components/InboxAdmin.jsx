@@ -21,6 +21,12 @@ function InboxAdmin() {
                             <h1>Domain</h1>
                         </div>
                         <div className="Captions">
+                            <h1>Hostel</h1>
+                        </div>
+                        <div className="Captions">
+                            <h1>Room No</h1>
+                        </div>
+                        <div className="Captions">
                             <h1>Description</h1>
                         </div>
                         <div className="Captions">
@@ -38,7 +44,13 @@ function InboxAdmin() {
                             <h1>7376222cb146</h1>
                         </div>
                         <div className="listOfStudents">
-                            <h1>Eletrical</h1>
+                            <h1>Electrical</h1>
+                        </div>
+                        <div className="listOfStudents">
+                            <h1>Emerald</h1>
+                        </div>
+                        <div className="listOfStudents">
+                            <h1>E-368</h1>
                         </div>
                         <div className="listOfStudents">
                             <h1>Light is sparking</h1>
@@ -63,11 +75,18 @@ function InboxAdmin() {
                         <div className="listOfStudents">
                             <h1>7376222cb146</h1>
                         </div>
+                        
                         <div className="listOfStudents">
-                            <h1>Eletrical</h1>
+                            <h1>Electrical</h1>
                         </div>
                         <div className="listOfStudents">
-                            <h1>Light is sparking,broke the charging port in the wallsdsf sfed</h1>
+                            <h1>Emerald</h1>
+                        </div>
+                        <div className="listOfStudents">
+                            <h1>E-368</h1>
+                        </div>
+                        <div className="listOfStudents">
+                            <h1>Light is sparking,broke lorem the charging port in the wallsdsf sfed</h1>
                         </div>
                         <div className="listOfStudents">
                             <h1>Pending</h1>

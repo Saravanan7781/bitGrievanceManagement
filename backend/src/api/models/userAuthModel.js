@@ -13,9 +13,6 @@ const loginSchema = new mongoose.Schema({
     },
     password:{
         type: String
-    },
-    role:{
-        type: String
     }
 });
 
@@ -25,7 +22,6 @@ const loginSchema = new mongoose.Schema({
 //     },
 //     sess
 // })
-
 
 const loginModel = mongoose.model('login',loginSchema);
 

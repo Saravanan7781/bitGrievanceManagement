@@ -1,0 +1,101 @@
+.mainAddUser{
+    height: 100dvh;
+    width: 100%;
+    /* background-color: black; */
+    /* border: 3px solid white; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.AddUserOuter{
+        height: 60dvh;
+        width: 75%;
+        border-radius: 3ch;
+        border: 3px solid firebrick;
+        transform: translateY(10%);
+       
+        
+}
+
+
+
+.addUserbtn{
+    height: 30px;
+    width: 70px;
+    border-radius: .75ch;
+    border: 1px solid firebrick;
+}
+
+.topOfAddUser{
+     display: flex;
+        justify-content: space-around;
+        gap: 50vw;
+        margin-top: 2vh;
+}
+
+
+.searchBar{
+    height: 5vh;
+    width: 45%;
+    /* border: 1px solid blue; */
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    /* background-color: white; */
+}
+
+.searchBar input{
+    height: 5vh;
+    width: 90%;
+    outline: none;
+    font-size: 1.2rem;
+    padding-inline-start: .5vw;
+    border: none;
+    border-radius: 1ch;
+}
+
+.secondTop{
+     height: 7vh;
+    margin-left: 4vw;
+    margin-top: 2vh;
+    width: 80%;
+    /* border: 1px solid blueviolet; */
+    display: flex;
+    align-items: center;
+}
+
+.options{
+    margin-inline-start: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    
+}
+
+.option1{
+    border-radius: 1ch 0 0 1ch;
+    border-right: 1px solid black;
+}
+
+
+.option2{
+     border-radius: 0 1ch 1ch 0;
+}
+
+.option1clicked{
+    background-color: #1181b3;
+    color: #fff;
+}
+.option1,.option2{
+    height: 40px;
+    width: 80px;
+    
+      display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    
+} 

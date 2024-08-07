@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
+
+
+.inboxForFlex{
+    height: 100dvh;
+     display: flex;
+    justify-content:center;
+    align-items: center;
+   
+}
+
+.inboxAdminOuter{
+    height: 65vh;
+    width: 90vw;
+    background-color: white;
+    /* background-color: grey; */
+    border: 3px solid rgba(128, 128, 128, 0.498);
+    box-shadow: 0px 0px 17px 5px rgba(128, 128, 128, 0.4);
+    transform: translateY(7vh);
+    border-radius: 2ch;
+    padding: 1.2rem;
+}
+
+.inboxAdminOuter h1{
+    text-align: center;
+    font-family: "Pixelify Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.inboxAdminCaption{
+    max-height: calc(70vh - 39px);
+    width: 100%;
+    /* border: 3px solid  black ; */
+    border-radius: 2ch;
+    display: grid;
+    grid-template-columns: .2fr repeat(5,.75fr) 2fr .75fr .24fr;
+   border-radius: 2ch;
+   background-color: #E6E6FA;
+}
+
+.Captions{
+     height: 6vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+     /* background-color: #E6E6FA; */
+     /* border: 3px solid black; */
+}
+
+.Captions h1{
+     font-size: clamp(16px, calc(16px + 1vw), 20px);
+     font-family: "Poppins", sans-serif;
+      /* background-color: #E6E6FA; */
+  font-weight: 600;
+  font-style: normal;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+
+
+.listOfStudents {
+    margin-top: 10px;
+    height: 7vh;
+    border-bottom: 2px solid rgb(216, 211, 211);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: auto; /* Show scrollbar only when text overflows */
+    white-space: nowrap; /* Prevent text from wrapping */
+    scroll-snap-type: x proximity; /* Enable snapping behavior */
+}
+
+.inboxAdminMain:nth-child(n):hover{
+    background-color:  #E6E6FA;
+    cursor: pointer;
+     border-radius: 2ch;
+}
+
+.listOfStudents:last-child{
+     border: none;
+}
+
+.eye{
+    padding: .5vw;
+   transition: .4s;
+    display: flex;
+    clip-path: circle();
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+   
+}
+
+.eye:hover{
+    clip-path: circle();
+     background-color: rgba(216, 212, 212, 0.74);
+     
+}
+
+
+.listOfStudents h1{
+    font-size: clamp(16px, calc(12px + 1vw), 18px);
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.inboxAdminMain{
+    display: grid;
+    grid-template-columns: .2fr repeat(5,.75fr) 2fr .75fr .24fr;
+    
+}

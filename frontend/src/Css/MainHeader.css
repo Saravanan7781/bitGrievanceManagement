@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+.mainContainer{
+  height: 15vh;
+    width: 100%;
+    /* border: 6px solid firebrick; */
+    overflow-x: hidden;
+    overflow-y:auto;
+    position: absolute;
+    background: #8869f4;
+    color: aliceblue;
+}
+
+
+.topRightContent{
+    list-style: none;
+    /* border: 3px dotted purple; */
+    float: right;
+    display: flex;
+    gap: 10px;
+    /* z-index: 1; */
+}
+
+.moreButton {
+ color: firebrick;
+  animation: rotation 3s ease-out infinite  ;
+}
+
+.leftCenterContent{
+    display: flex;
+    list-style: none;
+    gap: 3vw;
+    height: calc(100% - 28px);
+    align-items: center;
+    /* border: 2px dashed lime; */
+    justify-content: flex-start;
+    margin-left: 2%;
+    /* position: relative; */
+    /* left: 5%; */
+    padding: 0 0 0 5vw;
+    z-index: 0;
+}
+
+.leftCenterContent a{
+  /* color: white; */
+font-family: "Exo 2", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  color: aliceblue;
+}
+
+.leftCenterContent h1{
+  font-family: "Space Grotesk", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+
+}
+
+
+.bottomRightContent{
+  float: right;
+  display: flex;
+  list-style: none;
+  font-weight: 800;
+  font-size: 1.1rem;
+  gap: 1vw;
+   font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.bottomRightContent a,.topRightContent a{
+  color: aliceblue;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  25%{
+    transform: rotate(90deg);
+  }
+
+  50% {
+    transform: rotate(180deg);
+  }
+  75%{
+    transform: rotate(270deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

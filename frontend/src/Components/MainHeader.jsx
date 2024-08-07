@@ -1,7 +1,7 @@
 import React from 'react';
 import { CgProfile } from "react-icons/cg";
 import '../Css/MainHeader.css';
-import Sidebar from './Sidebar';
+import Sidebar from './admin/Sidebar';
 import { MdOutlineExpandMore } from "react-icons/md";
 
 function MainHeader() {

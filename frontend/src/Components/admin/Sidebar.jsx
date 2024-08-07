@@ -1,5 +1,5 @@
 import React from 'react';
-import '../Css/Sidebar.css';
+import '../../Css/admin/Sidebar.css';
 import { useNavigate } from 'react-router-dom';
 
 import { GoInbox } from "react-icons/go";

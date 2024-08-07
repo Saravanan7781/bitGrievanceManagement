@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import '../Css/Home.css';
+import '../../Css/admin/Home.css';
 import { BsCalendar2Check, BsClipboard2DataFill } from 'react-icons/bs';
 import { MdOutlinePendingActions } from 'react-icons/md';
 

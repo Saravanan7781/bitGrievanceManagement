@@ -1,11 +1,13 @@
 import '../Css/App.css';
 import MainHeader from './MainHeader';
-import Sidebar from './Sidebar';
+import Sidebar from './admin/Sidebar';
 import Login from './Login'
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Home from './Home'
-import InboxAdmin from './InboxAdmin';
-import AddUser from './AddUser';
+import Home from './admin/Home'
+import InboxAdmin from './careTaker/InboxCaretaker';
+import AddUser from './admin/AddUser';
+import BriefReport from './careTaker/BriefReport'
+
 
 function App() {
   return (
@@ -41,7 +43,9 @@ function App() {
           }
           >
 
-          </Route>
+        </Route>
+        <Route path='/viewReport' element={ < BriefReport />} >
+        </Route>
       </Routes>
     </Router>
   );

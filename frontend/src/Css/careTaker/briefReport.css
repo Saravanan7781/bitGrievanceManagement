@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Edu+AU+VIC+WA+NT+Hand:wght@400..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Edu+AU+VIC+WA+NT+Hand:wght@400..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+.complaintNo strong,
+.date strong {
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+
+}
+
+.nameQ p,
+.mailQ p,
+.rollQ p,
+.roomQ p,
+.hostelQ p,
+.domainQ p,
+.caption strong {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+
+}
+
+.mainBriefReport {
+    height: 100vh;
+    width: 100vw;
+    /* border: 3px solid firebrick; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: black; */
+}
+
+.subBriefReport h1 {
+    text-align: center;
+    font-size: 3rem;
+    font-family: "Archivo", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+    font-variation-settings:
+        "wdth" 200;
+}
+
+.subBriefReport {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 75%;
+    width: 80%;
+    /* border: 3px solid green; */
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.reportContainer:hover {
+    box-shadow: 0px 20px 20px 5px grey;
+    cursor: pointer;
+}
+
+.reportContainer {
+    transition: .5s;
+    height: 90%;
+    width: 90%;
+    border: 3px solid rgba(128, 128, 128, 0.502);
+    box-shadow: 0px 10px 10px 1px grey;
+    border-radius: 2ch;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.firstContainer {
+    width: 95%;
+    height: 10%;
+    /* border: 3px solid black; */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+.mainReportContainer {
+    height: 96%;
+    width: 95%;
+    /* border: 3px solid green; */
+    display: flex;
+}
+
+.secondContainer,
+.thirdContainer {
+    height: 100%;
+    /* border: 1px solid firebrick; */
+}
+
+.secondContainer {
+    width: 50%;
+}
+
+.thirdContainer {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.firstRow,
+.secondRow {
+    height: 10%;
+    /* border: 3px solid blue; */
+    display: flex;
+
+    justify-content: space-around;
+}
+
+
+
+.thirdRow {
+    height: 80%;
+    /* border: 3px solid purple; */
+}
+
+
+.mailQ,
+.nameQ,
+.roomQ,
+.rollQ {
+    width: 25%;
+    /* border: 2px solid purple; */
+    font-weight: 900;
+}
+
+
+
+
+.hostelQ,
+.domainQ {
+    width: 14%;
+    font-weight: 900;
+}
+
+.name,
+.mail {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    width: 50%;
+    /* border: 3px solid violet; */
+}
+
+.roomno,
+.rollno {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    width: 50%;
+    /* border: 3px solid firebrick; */
+}
+
+.hostel,
+.domain,
+.caption {
+    width: 100%;
+    height: 13%;
+    /* font-weight: 900; */
+    /* border: 3px solid black; */
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+
+.description {
+    height: fit-content;
+    padding: 15px;
+    /* Adds extra space inside the element */
+    border: 2px solid black;
+    border-radius: 1.5ch;
+}
+
+.proof {
+    height: 80%;
+    width: 80%;
+    border: 3px solid black;
+    border-radius: 1.5ch;
+    font-size: 2rem;
+
+}
+
+.proof p {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    text-align: center;
+}

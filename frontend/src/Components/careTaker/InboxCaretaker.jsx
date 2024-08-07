@@ -1,5 +1,5 @@
 import React from 'react'
-import '../Css/InboxAdmin.css';
+import '../../Css/careTaker/inboxCareTaker.css';
 import { FaRegEye } from "react-icons/fa";
 
 function InboxAdmin() {

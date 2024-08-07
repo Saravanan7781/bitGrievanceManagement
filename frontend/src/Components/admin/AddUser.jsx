@@ -1,5 +1,5 @@
 import react from 'react';
-import '../Css/AddUser.css';
+import '../../Css/admin/AddUser.css';
 import { BsSearch } from "react-icons/bs";
 import { useState } from 'react';
 

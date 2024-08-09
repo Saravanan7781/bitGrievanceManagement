@@ -15,7 +15,7 @@ function UserWriteForm() {
 
 
   const handleSelectChange = (event) => {
-    setSelectedOption(event.target.value);
+      setSelectedOption(event.target.value);
   };
 
 

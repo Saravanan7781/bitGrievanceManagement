@@ -1,0 +1,138 @@
+.GrievancePage {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    background-color: white;
+    justify-content: center;
+    text-align: center;
+}
+
+
+.formOuter {
+    height: 75vh;
+    width: 85vw;
+    /* border: 3px solid plum; */
+    transform: translateY(24%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+h2 {
+    margin: 10px;
+}
+
+
+.formInner {
+    border: 1px solid rgb(186, 186, 186);
+    border-radius: 20px;
+    background-color: white;
+    box-shadow: 0px 1px 3px #808080;
+    width: 75vw;
+    height: 70vh;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 2% 3% 2% 3%;
+}
+
+
+label {
+    margin-bottom: 2%;
+    font-size: larger;
+}
+
+p {
+    margin-bottom: 0%;
+    text-align: left;
+}
+
+.dropdown {
+    background-color: white;
+    width: 15vw;
+    border-radius: 10px;
+    box-shadow: 0px 1px 3px gray;
+    margin: 1%;
+}
+
+
+.dropdown ul li {
+    line-height: 1.5;
+}
+
+.dropdownBtn {
+    border: 2px solid rgb(207, 206, 206);
+    border-radius: 10px;
+    background-color: white;
+    width: 15vw;
+    height: 5vh;
+}
+
+
+.domainSelect {
+    border: 2px solid rgb(207, 206, 206);
+    border-radius: 10px;
+    background-color: white;
+    width: 15vw;
+    height: 5vh;
+}
+
+
+.DescriptionInput {
+    border: 1px solid rgb(207, 206, 206);
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0px 1px 3px gray;
+    width: 70vw;
+    height: 20vh;
+}
+
+
+.submitArea {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    /* Add this line */
+}
+
+
+.btnArea {
+    flex: 50%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+
+.inputImage {
+    border: 2px solid rgb(207, 206, 206);
+    border-radius: 10px;
+    background-color: white;
+    padding: 3%;
+    width: 200px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+.submitBtn {
+    border: 2px solid rgb(207, 206, 206);
+    border-radius: 20px;
+    background-color: #8869f4;
+    padding: 10px;
+    width: 150px;
+    height: 50px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    color: white;
+    font-size: large;
+    text-align: center;
+}
+
+
+@media (max-width: 600px) {
+    .submitArea {
+        flex-direction: column;
+        align-items: center;
+    }
+}

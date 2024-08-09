@@ -7,7 +7,8 @@ import Home from './admin/Home'
 import InboxAdmin from './careTaker/InboxCaretaker';
 import AddUser from './admin/AddUser';
 import BriefReport from './careTaker/BriefReport'
-
+import AdminHome from './admin/AdminHome';
+import UserWriteForm from './user/UserWriteForm';
 
 function App() {
   return (
@@ -44,6 +45,14 @@ function App() {
           >
 
         </Route>
+        <Route path='/userWriteForm' element={<UserWriteForm />}  >
+
+        </Route>
+
+        <Route path='/adminHome' element={ <AdminHome />}>
+          
+        </Route>
+
         <Route path='/viewReport' element={ < BriefReport />} >
         </Route>
       </Routes>

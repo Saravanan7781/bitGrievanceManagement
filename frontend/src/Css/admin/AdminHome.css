@@ -1,0 +1,88 @@
+.Adminhome {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    background-color: white;
+    justify-content: center;
+    text-align: center;
+}
+
+
+.PageOuter {
+    height: 75vh;
+    width: 85vw;
+    /* border: 3px solid plum; */
+    transform: translateY(24%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+
+h1 {
+    margin: 10px;
+}
+
+
+.Outerbox {
+    border: 1px solid rgb(186, 186, 186);
+    border-radius: 20px;
+    box-shadow: 2px 1px 3px #808080;
+    height: 70vh;
+    width: 70vw;
+    margin: auto;
+    display: grid;
+    padding: 10px;
+    grid-template-columns: repeat(2, 1fr);
+    /* Create 2 equal columns */
+    grid-template-rows: repeat(2, 1fr);
+    /* Create 2 equal rows */
+    gap: 30px;
+    /* Optional: Add some space between the grid items */
+}
+
+
+.AddAdmin,
+.ViewAdmin,
+.ViewReport,
+.ViewFb {
+    height: 70%;
+    width: 70%;
+    font-size: 18px;
+    margin: auto;
+    border: 1px solid rgb(186, 186, 186);
+    border-radius: 20px;
+    box-shadow: 2px 1px 3px #808080;
+    padding: 20px;
+    /* Optional: Add padding inside the inner divs */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.icon1,
+.icon2,
+.icon3,
+.icon4 {
+    font-size: 2.5em;
+    margin: 10px;
+}
+
+
+.icon1 {
+    color: rgb(101, 177, 224);
+}
+
+.icon2 {
+    color: rgba(241, 238, 81, 0.922);
+}
+
+.icon3 {
+    color: rgb(210, 136, 90);
+}
+
+.icon4 {
+    color: rgb(90, 210, 170);
+}

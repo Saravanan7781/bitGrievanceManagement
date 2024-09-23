@@ -3,8 +3,15 @@ import { CgProfile } from "react-icons/cg";
 import '../Css/MainHeader.css';
 import Sidebar from './admin/Sidebar';
 import { MdOutlineExpandMore } from "react-icons/md";
-
+import { useNavigate } from 'react-router-dom';
 function MainHeader() {
+  const navigate = useNavigate();
+
+  const Logout = () => {
+    navigate('/ ')
+  }
+
+
   return (
     <header>
       <div className='mainContainer'>
@@ -24,13 +31,11 @@ function MainHeader() {
           </li>
         </ul>
         <ul className='leftCenterContent'>
-          {/* <li><img src="./Logos/bitLogo.ico" /></li> */}
           <li><h1><a href=''>BIT</a></h1></li>
           <li><h1>Compliance Management</h1></li>
         </ul>
-        <ul className="bottomRightContent">
-          <li><a href=''>Settings</a></li>
-          <li><a href=''>About</a></li>
+        <ul className="bottomRightContent" onClick={ Logout}>
+          <li>Logout</li>
         </ul>
       </div>
       <Sidebar />

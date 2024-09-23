@@ -1,10 +1,37 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate} from 'react-router-dom'
 import '../../Css/admin/Home.css';
 import { BsCalendar2Check, BsClipboard2DataFill } from 'react-icons/bs';
 import { MdOutlinePendingActions } from 'react-icons/md';
+// import {useEffect} from 'react';
+import Cookies from'js-cookie'
+import axios from 'axios'
 
 function Home() {
+  const navigate = useNavigate();
+  const token = Cookies.get('JWT');
 
+  useEffect(() => {
+    const checkToken = async () => {
+      if (!token) {
+        navigate('/');
+        return;
+      }
+      else {
+        const response = await axios.get('http://127.0.0.27:7777/api/user/current', {
+          headers: {
+            Authorization: `Bearer ${token}`
+          }
+        })
+        console.log(response.data);
+      }
+
+    }
+    checkToken()
+  },
+    
+    []
+  )
 
   const list = [
     { id: 1, title: 'TOTAL COMPLAINTS', total: 10 },
@@ -18,7 +45,10 @@ function Home() {
         {list.map((ele) => (
           <div className='dashboardInfos' key={ele.id}>
             <div className='info'>
-              <h1>{ele.title}</h1>
+              <div className="infoCaption">
+                   <h1>{ele.title}</h1>
+              </div>
+             
               <div className='infoIcons'>
                 {ele.id === 1 ? (
                   <BsCalendar2Check />

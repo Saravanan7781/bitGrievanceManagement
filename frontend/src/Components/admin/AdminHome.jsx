@@ -10,7 +10,8 @@ function AdminHome() {
         <div className="PageOuter">
          <h1>Admin Home</h1>
          <div className="Outerbox">
-         <div className="AddAdmin"> <RiUserAddFill className="icon1"/>ADD ADMIN</div>
+            <div className="AddAdmin">
+              <RiUserAddFill className="icon1" />ADD ADMIN</div>
          <div className="ViewAdmin"> <RiUserSearchFill className="icon2"/>VIEW ADMIN</div>
          <div className="ViewReport"> <HiDocumentSearch className="icon3"/>VIEW REPORT</div>
          <div className="ViewFb"> <MdFeedback className="icon4"/>VIEW FEEDBACK</div>

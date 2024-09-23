@@ -1,8 +1,17 @@
 import React from 'react'
 import '../../Css/careTaker/inboxCareTaker.css';
 import { FaRegEye } from "react-icons/fa";
+import {useNavigate} from 'react-router-dom'
+
 
 function InboxAdmin() {
+    const navigate = useNavigate();
+    
+    const viewBrief = () => {
+        navigate('/viewReport');
+    };
+
+
     return (
       <div className="inboxForFlex">
       <div className='inboxAdminOuter'>
@@ -58,9 +67,8 @@ function InboxAdmin() {
                         <div className="listOfStudents">
                             <h1>Pending</h1>
                     </div>
-                    <div className="listOfStudents">
-                        <div className="eye">
-
+                    <div className="listOfStudents" onClick={viewBrief}>
+                        <div className="eye" >
                             <FaRegEye />
                         </div>
                     </div>

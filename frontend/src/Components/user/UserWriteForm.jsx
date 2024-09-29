@@ -1,12 +1,32 @@
 import React from 'react'
 import '../../Css/user/UserWriteForm.css'
-import { useState } from 'react'
-
+import { useState,useEffect } from 'react'
+import axios from 'axios'
+import Cookies from 'js-cookie'
 
 function UserWriteForm() {
     const [textValue, setTextValue] = useState('');
-  const [selectedOption, setSelectedOption] = useState('');
+  const [selectedOption, setSelectedOption] = useState('Electrical');
   const [image, setImage] = useState(null);
+  const [userId, setUserId] = useState();
+
+  useEffect(() => {
+    const getUserId = async (req, res) => {
+      let token = Cookies.get('JWT');
+      // console.log(token)
+      const answer = await axios.get('http://127.0.0.27:7777/api/user/current', {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      }
+      )
+      setUserId(answer.data)
+    
+    }
+    getUserId();
+    }, []);
+  
+
 
 
   const handleTextChange = (event) => {
@@ -25,14 +45,26 @@ function UserWriteForm() {
   };
 
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async(event) => {
     event.preventDefault();
     console.log('Text:', textValue);
     console.log('Selected Option:', selectedOption);
     console.log('Image:', image);
-    // Add your form submission logic here
-    // For example, send the form data to a server
-    // Reset the form fields after submission
+    try {
+      const response = await axios.post('http://localhost:7777/api/user/submitUserWriteForm', {
+        user_id:userId._id,
+        domain: selectedOption,
+        desc: textValue,
+        // proof: image
+      });
+
+      console.log(response);
+    }
+    catch (err) {
+      console.log(err)
+    }
+
+
     setTextValue('');
     setSelectedOption('');
     setImage(null);

@@ -3,7 +3,7 @@
     justify-content: center;
     align-items: center;
     min-height: 100dvh;
-    
+    background-color: rgb(227, 219, 219);
 }
 
 .loginCaption{
@@ -15,8 +15,10 @@
 
 .loginContainer{
     /* border: 3px solid transparent; */
+    box-shadow: 0px 0px 100px 10px rgb(244, 242, 242);
     border-radius: 2.5rem;
     background-color: rgb(255, 255, 255);
+    border:1px solid #8869f4;
     height: 55dvh;
     width: 50dvw;
     display: flex;

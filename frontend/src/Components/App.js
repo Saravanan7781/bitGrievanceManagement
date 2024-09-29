@@ -53,7 +53,7 @@ function App() {
           
         </Route>
 
-        <Route path='/viewReport' element={ < BriefReport />} >
+        <Route path='/viewReport/:id' element={ < BriefReport />} >
         </Route>
       </Routes>
     </Router>

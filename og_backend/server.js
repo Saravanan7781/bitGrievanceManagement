@@ -2,7 +2,12 @@ const express = require('express');
 const server = express();
 const dotenv = require('dotenv');
 dotenv.config();
+
 const loginRouter = require('./routes/loginRoute');
+const userWriteFormRouter = require('./routes/userWriteForm');
+const submissionRouter = require('./routes/submissionsRoutes');
+const dashboardCountController = require('./controllers/dashboardCountController')
+
 const dbConnect = require('./config/dbConnect');
 const tokenValidator = require('./middlewares/tokenValidator');
 const { errorHandler } = require('./middlewares/errorHandler');
@@ -13,7 +18,8 @@ const port = process.env.PORT || 3001;
 dbConnect();
 server.use(express.json());
 server.use(cors())
-server.use('/api', loginRouter);
+server.use('/api', loginRouter,userWriteFormRouter,submissionRouter,dashboardCountController);
+// server.use('/api',)
 
 server.use(errorHandler);
 

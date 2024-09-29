@@ -12,7 +12,7 @@
 }
 
 .inboxAdminOuter{
-    height: 65vh;
+    height: 75vh;
     width: 90vw;
     background-color: white;
     /* background-color: grey; */
@@ -37,7 +37,7 @@
     /* border: 3px solid  black ; */
     border-radius: 2ch;
     display: grid;
-    grid-template-columns: .2fr repeat(5,.75fr) 2fr .75fr .24fr;
+    grid-template-columns: .2fr .75fr .80fr repeat(3,.75fr) 2fr .75fr .24fr;
    border-radius: 2ch;
    background-color: #E6E6FA;
 }
@@ -115,6 +115,21 @@
 
 .inboxAdminMain{
     display: grid;
-    grid-template-columns: .2fr repeat(5,.75fr) 2fr .75fr .24fr;
+    grid-template-columns: .2fr .75fr .80fr .75fr .80fr .60fr 2fr .75fr .24fr;
     
+}
+
+.pendingStyle{
+    border: 3px solid rgb(252, 252, 46);
+    background-color: rgb(252, 252, 46);
+    border-radius: 1ch;
+    padding: .5vh  1vh;
+}
+
+
+.resolvedStyle{
+    border: 1px solid rgb(32, 253, 32);
+    background-color: rgb(32, 253, 32);
+    border-radius: 1.2ch;
+    padding: .5vh 1vh;
 }

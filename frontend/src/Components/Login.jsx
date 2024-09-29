@@ -52,7 +52,7 @@ function Login() {
              
              if (response.data) {
                  Cookie.set("JWT", response.data.token, {expires:1})//0.0416667 for one hour
-           
+                
                 navigate('home')}
              
         }

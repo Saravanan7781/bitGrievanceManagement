@@ -1,0 +1,70 @@
+/* Blurring the background */
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7); /* Dark overlay */
+    backdrop-filter: blur(10px); /* Blurs the background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Make sure it's above everything else */
+}
+
+/* Styling the modal content */
+.modalContent {
+    background-color: rgba(242, 242, 236, 0.93);
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    height: 50%;
+    max-width: 600px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Flexbox container */
+.profileContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%; /* Make sure the container takes up the entire modal height */
+}
+
+.info {
+    flex: 2;
+    padding-right: 20px;
+}
+
+.info p {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+/* User icon section */
+.userIcon {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: top; /* Vertically center */
+    align-items: center; /* Horizontally center */
+    height: 100%; /* Ensure the icon container takes full height */
+}
+
+.userIcon p {
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+h1 {
+    font-size: 24px;
+    padding: 20px;
+    text-align: center;
+}
+
+p {
+    margin-bottom: 10px;
+    font-size: 20px;
+    padding: 10px;
+}

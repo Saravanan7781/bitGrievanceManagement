@@ -56,7 +56,7 @@ function Sidebar() {
           </li>
           <li>
             <div className="sidebarInnerEle"
-            onClick={ ()=>navigate('/addUser') }>
+            onClick={ ()=>navigate('/CreateUser') }>
                <div className="temp">
                 <a>
                   <AiOutlineUserAdd size={25} />

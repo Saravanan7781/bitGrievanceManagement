@@ -1,101 +1,143 @@
-.mainAddUser{
+/* Container for the user list */
+.UserListForFlex {
     height: 100dvh;
+    display: flex;
+    justify-content:center;
+    align-items: center;
     width: 100%;
-    /* background-color: black; */
-    /* border: 3px solid white; */
+    
+  }
+  
+  /* Outer container */
+  .UserListOuter {
+    margin-top: 5%;
+    width: 100%;
+    max-width: 1200px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    overflow: hidden;
+    height: 80vh;
     display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the content horizontally */
+  }
+  
+  /* Header section */
+  .headersec {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%; /* Ensure it spans the full width */
+    margin-bottom: 10px;
+  }
+  
+  /* Center the "USERS" header */
+  .headersec h1 {
+    flex: 1;
+    text-align: center;
+    font-size: 2rem;
+    margin: 0;
+    color: #333;
+  }
+  
+  /* Filter section */
+  .filterSection {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  /* Caption section (column titles) */
+  .UserListCaption {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr 1fr 1fr 1fr 50px; /* Adjust column widths */
+    text-align: center;
+    background-color: #e4dcdc;
+    padding: 10px 0;
+    border-radius: 8px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    width: 100%; /* Span full width */
+  }
+  
+  /* Caption titles */
+  .UserListCaptions {
+    display: flex;
+    align-items: center;
     justify-content: center;
+    color: #555;
+  }
+  
+  /* Scrollable container */
+  .UserListMainContainer {
+    flex: 1;
+    overflow-y: auto;
+    width: 100%; /* Span full width */
+  }
+  
+  /* Custom scrollbar styling */
+  .UserListMainContainer::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  .UserListMainContainer::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius: 10px;
+  }
+  
+  /* Individual user entry */
+  .UserListMain {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr 1fr 1fr 1fr 50px; /* Match the header */
+    text-align: center;
     align-items: center;
-}
-
-
-.AddUserOuter{
-        height: 60dvh;
-        width: 75%;
-        border-radius: 3ch;
-        border: 3px solid firebrick;
-        transform: translateY(10%);
-       
-        
-}
-
-
-
-.addUserbtn{
-    height: 30px;
-    width: 70px;
-    border-radius: .75ch;
-    border: 1px solid firebrick;
-}
-
-.topOfAddUser{
-     display: flex;
-        justify-content: space-around;
-        gap: 50vw;
-        margin-top: 2vh;
-}
-
-
-.searchBar{
-    height: 5vh;
-    width: 45%;
-    /* border: 1px solid blue; */
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    /* background-color: white; */
-}
-
-.searchBar input{
-    height: 5vh;
-    width: 90%;
-    outline: none;
-    font-size: 1.2rem;
-    padding-inline-start: .5vw;
-    border: none;
-    border-radius: 1ch;
-}
-
-.secondTop{
-     height: 7vh;
-    margin-left: 4vw;
-    margin-top: 2vh;
-    width: 80%;
-    /* border: 1px solid blueviolet; */
+    padding: 12px 0;
+    border-bottom: 1px solid #f0f0f0;
+  }
+  
+  .UserListMain:hover {
+    background-color: #f9f9f9;
+  }
+  
+  /* User entry content */
+  .UserList {
     display: flex;
     align-items: center;
-}
-
-.options{
-    margin-inline-start: 40px;
-    display: flex;
     justify-content: center;
-    align-items: center;
+  }
+  
+  /* Text inside each cell */
+  .UserList h1 {
+    font-size: 1rem;
+    color: #333;
+    margin: 0;
+  }
+  
+  /* Eye icon */
+  .eye {
     cursor: pointer;
-    
-}
-
-.option1{
-    border-radius: 1ch 0 0 1ch;
-    border-right: 1px solid black;
-}
-
-
-.option2{
-     border-radius: 0 1ch 1ch 0;
-}
-
-.option1clicked{
-    background-color: #1181b3;
-    color: #fff;
-}
-.option1,.option2{
-    height: 40px;
-    width: 80px;
-    
-      display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #fff;
-    
-} 
+    color: #333;
+    transition: color 0.3s ease;
+  }
+  
+  .eye:hover {
+    color: #007bff;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .UserListCaption,
+    .UserListMain {
+      grid-template-columns: 1fr 2fr 1fr 50px;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .UserListCaption,
+    .UserListMain {
+      grid-template-columns: 1fr 1fr 50px;
+    }
+  }
+  

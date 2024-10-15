@@ -9,7 +9,8 @@ import AddUser from './admin/AddUser';
 import BriefReport from './careTaker/BriefReport'
 import AdminHome from './admin/AdminHome';
 import UserWriteForm from './user/UserWriteForm';
-
+import UserProfile from './user/UserProfile';
+import CreateUser from './admin/CreateUser';
 function App() {
   return (
     <Router>
@@ -38,7 +39,7 @@ function App() {
           <Route path='/addUser'
           element={
             <>
-            <MainHeader />
+            
             <AddUser />
             </>
           }
@@ -49,12 +50,22 @@ function App() {
 
         </Route>
 
-        <Route path='/adminHome' element={ <AdminHome />}>
-          
+        <Route path='/adminHome' element={ <>
+          <MainHeader />
+          <AdminHome />
+          </>
+          }>
+        </Route>
+
+        <Route path='/createUser' element={ <>
+          <CreateUser />
+          </>
+          }>
         </Route>
 
         <Route path='/viewReport/:id' element={ < BriefReport />} >
         </Route>
+        <Route path="/user/:id" element={<UserProfile />} />
       </Routes>
     </Router>
   );

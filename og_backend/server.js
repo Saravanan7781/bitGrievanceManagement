@@ -6,7 +6,8 @@ dotenv.config();
 const loginRouter = require('./routes/loginRoute');
 const userWriteFormRouter = require('./routes/userWriteForm');
 const submissionRouter = require('./routes/submissionsRoutes');
-const dashboardCountController = require('./controllers/dashboardCountController')
+const dashboardCountRoute = require('./routes/dashboardCountRoute')
+const userProfileRoute = require('./routes/userProfileRoute');
 
 const dbConnect = require('./config/dbConnect');
 const tokenValidator = require('./middlewares/tokenValidator');
@@ -18,7 +19,7 @@ const port = process.env.PORT || 3001;
 dbConnect();
 server.use(express.json());
 server.use(cors())
-server.use('/api', loginRouter,userWriteFormRouter,submissionRouter,dashboardCountController);
+server.use('/api', loginRouter,userWriteFormRouter,submissionRouter,dashboardCountRoute,userProfileRoute);
 // server.use('/api',)
 
 server.use(errorHandler);

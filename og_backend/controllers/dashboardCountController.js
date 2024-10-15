@@ -10,7 +10,7 @@ const dashboardCountController = async(req, res) => {
             pending = await submissionModel.
             countDocuments({ status:"pending" });
         
-            resolved = await submissionModel.countDocuments({ status:"resolved" });
+            resolved = await submissionModel.countDocuments({ status:"Resolved" });
         
 
             res.json({
@@ -23,8 +23,9 @@ const dashboardCountController = async(req, res) => {
             console.log(err + 'in getting total documents');
         }
     }
+
     else if (role === 'caretaker') {
-        // console.log("hi from server")
+        console.log("caretaker unlocked");
         //finding the total no of submissions as per the hostel
         const total = await submissionModel.aggregate(
             [{
@@ -62,13 +63,16 @@ const dashboardCountController = async(req, res) => {
                 }
             },
             {
+                $unwind:'$result'
+            },
+            {
                 $match: {
                     "result.hostel": hostel
                 }
             },
             {
                 $match: {
-                    "status": "resolved"
+                    "status": "Resolved"
                 }
             },
             {
@@ -76,8 +80,9 @@ const dashboardCountController = async(req, res) => {
             }
         ]);
 
-        const totalRes = (total[0].count)
-        const resolvedRes = (resolved[0].resolvedCount);
+        const totalRes = (total[0] && total[0].count) ? total[0].count : 0;
+        console.log(totalRes)
+        const resolvedRes = (resolved[0])?(resolved[0].resolvedCount) : 0;
         const pending = totalRes - resolvedRes;
 
         res.json({

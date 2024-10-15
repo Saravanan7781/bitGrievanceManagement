@@ -7,7 +7,7 @@ const tokenValidator = (req, res, next) => {
         if (token) { 
             jwt.verify(token,process.env.TOP_SECRET_KEY, (err, dec) => {
                 if(err) {
-                    console.log("Fake User!!!");
+                    console.log(err);
                     return res.status(401).json({ message: "Token is invalid or expired" });
 
                 }

@@ -117,6 +117,10 @@ p {
 }
 
 
+.previewImage{
+    height: 2vh;
+}
+
 .submitBtn {
     border: 2px solid rgb(207, 206, 206);
     border-radius: 20px;

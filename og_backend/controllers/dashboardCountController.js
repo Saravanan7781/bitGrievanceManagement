@@ -1,30 +1,34 @@
 const submissionModel = require('../models/userWriteForm');
-let total, pending;
+let total, pending,rejected;
 
 const dashboardCountController = async(req, res) => {
     const { role, hostel } = req.body;
-    // console.log(req.body);
     if (role === 'admin') {
         try {
             total = await submissionModel.countDocuments();
             pending = await submissionModel.
             countDocuments({ status:"pending" });
         
-            resolved = await submissionModel.countDocuments({ status:"resolved" });
-        
+            resolved = await submissionModel.countDocuments({ status:"Resolved" });
+            
+            rejected = await submissionModel.countDocuments({status:"Rejected"})
+            
+
 
             res.json({
                 total,
                 pending,
-                resolved
+                resolved,
+                rejected
             })
         }
         catch (err) {
             console.log(err + 'in getting total documents');
         }
     }
+
     else if (role === 'caretaker') {
-        // console.log("hi from server")
+        console.log("caretaker unlocked");
         //finding the total no of submissions as per the hostel
         const total = await submissionModel.aggregate(
             [{
@@ -62,13 +66,16 @@ const dashboardCountController = async(req, res) => {
                 }
             },
             {
+                $unwind:'$result'
+            },
+            {
                 $match: {
                     "result.hostel": hostel
                 }
             },
             {
                 $match: {
-                    "status": "resolved"
+                    "status": "Resolved"
                 }
             },
             {
@@ -76,15 +83,44 @@ const dashboardCountController = async(req, res) => {
             }
         ]);
 
+        const rejected = await submissionModel.aggregate([
+            {
+                $lookup: {
+                    from: "logins",
+                    localField: "user_id",
+                    foreignField: "_id",
+                    as: "result"
+                }
+            },
+            {
+                $unwind:'$result'
+            },
+            {
+                $match: {
+                    "result.hostel": hostel
+                }
+            },
+            {
+                $match: {
+                    "status": "Rejected"
+                }
+            },
+            {
+                $count: "rejectedCount"
+            }
+        ]);
+
         const totalRes = (total[0].count)
-        const resolvedRes = (resolved[0].resolvedCount);
+        const resolvedRes = (resolved[0])?(resolved[0].resolvedCount) : 0;
         const pending = totalRes - resolvedRes;
+        const rejectedRes = rejected[0] ? (rejected[0].rejectedCount) : 0;
 
         res.json({
             hostel,
             total: totalRes,
             resolved: resolvedRes,
-            pending: pending
+            pending: pending,
+            rejected: rejectedRes
         })
     }
     // console.log(role)

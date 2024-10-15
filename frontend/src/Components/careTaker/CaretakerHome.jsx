@@ -6,6 +6,10 @@ import {useState, useEffect} from 'react'
 import { BsCalendar2Check } from 'react-icons/bs';
 import { PiNotepadBold } from "react-icons/pi";
 import { MdOutlinePendingActions } from 'react-icons/md';
+import pending from '/Projects/bitGrievanceManagement/frontend/src/Logos/pending.png'
+import resolved from '/Projects/bitGrievanceManagement/frontend/src/Logos/resolved.png'
+import total from '/Projects/bitGrievanceManagement/frontend/src/Logos/total.png'
+import rejected from '/Projects/bitGrievanceManagement/frontend/src/Logos/rejected.png'
 
 function CaretakerHome() {
     const navigate = useNavigate();
@@ -39,37 +43,43 @@ function CaretakerHome() {
 
   useEffect(() => {
     const getDashboardDetails = async (realResponse) => {
-      console.log(realResponse.role);
-      console.log(realResponse.hostel)
+      // console.log(realResponse.role);
+      // console.log(realResponse.hostel)
         const dashboardResult = await axios.post('http://127.0.0.27:7777/api/user/adminCount', {
           role: realResponse.role,
           hostel: realResponse.hostel 
         }
         )
 
-      // console.log(dashboardResult)
+      // 
       setDashboardInfo(dashboardResult.data)
-      console.log(dashboardInfo)
     }
     
     if (realResponse) {
-      console.log("n")  
+  
       getDashboardDetails(realResponse);
     }
   } ,
     [realResponse]  
-)
+  )
+  
+  useEffect(() => {
+    console.log(dashboardInfo)
+  },[dashboardInfo])
 
   const list = dashboardInfo
     ? [
         { id: 1, title: 'RESOLVED', total: dashboardInfo.resolved || 0 }, // Fetch total complaints
         { id: 2, title: 'TOTAL COMPLAINTS', total: dashboardInfo.total || 0 }, // Fetch resolved complaints
-        { id: 3, title: 'PENDING', total: dashboardInfo.pending || 0 }, // Fetch pending complaints
+      { id: 3, title: 'PENDING', total: dashboardInfo.pending || 0 },
+         { id: 4, title: 'REJECTED', total: dashboardInfo.rejected || 0 },
+         // Fetch pending complaints
       ]
     : [
         { id: 1, title: 'RESOLVED', total: 0 }, // Default when dashboardInfo is not available
         { id: 2, title: 'TOTAL COMPLAINTS', total: 0 },
-        { id: 3, title: 'PENDING', total: 0 },
+      { id: 3, title: 'PENDING', total: 0 },
+        { id: 4, title: 'REJECTED', total:  0 },
       ];
 
   return (
@@ -82,18 +92,21 @@ function CaretakerHome() {
                    <h1>{ele.title}</h1>
               </div>
              
-              <div className='infoIcons'>
+              <div className='infoIcons' >
                 {ele.id === 1 ? (
-                  <BsCalendar2Check style={{color:'green'}} />
+                  <img src={ resolved} alt="resolved" style={{height:"90%"}}/>
                 ) : ele.id === 2 ? (
-                    <PiNotepadBold style={{color:'black'}} />
+                    <img src={total} alt="total" style={{height:"90%",translate: "10px"}}/>
                     
-                ) : (
-                  <MdOutlinePendingActions style={{color:'#ff9933'}}/>
-                )}
+                ) : ele.id === 3 ?  (
+                      <img src={ pending} alt="pending" style={{height:"90%"}}/>
+                    ) : (
+                        <img src={ rejected} alt="rejected" style={{height:"90%"}}/>
+                )
+              }
               </div>
               <h1>{ele.total}</h1>
-            </div>
+            </div>  
           </div>
         ))}
       </div>

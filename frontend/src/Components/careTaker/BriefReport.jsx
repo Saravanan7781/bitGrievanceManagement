@@ -6,12 +6,14 @@ import axios from 'axios';
 function BriefReport() {
   const { id } = useParams();
   const [response, setResponse] = useState();
-
+  const [status, setStatus] = useState(null);
+  const [proof, setProof] = useState(null);
   useEffect(() => {
     const fetchDetails = async () => {
       try {
         const res = await axios.get(`http://127.0.0.27:7777/api/user/viewSubmission/${id}`)
         setResponse(res.data[0]);
+        setProof(res.data[0].proof);
       }
       catch (err) {
         console.log(err);
@@ -21,6 +23,11 @@ function BriefReport() {
     fetchDetails();
   }, [id]);
 
+
+  const acceptOrReject = async (ans) => {
+    const output = await axios.get(`http://127.0.0.27:7777/api/user/submissions/submissionApproval/${id}?status=${ans}`)
+    setResponse((prevResponse) => ({...prevResponse,status:ans}))
+ }
 
 if (!response) {
     return <div>Loading...</div>;
@@ -85,10 +92,22 @@ if (!response) {
                 <div className="status">
                   <p><strong>Status:</strong></p>
                   <div className="responseStatus">
-                    {response.status === 'resolved' ? 'resolved' :
-                      (<div className='optionalStatus'>
-                      <p className='approveStatus'>Approve</p>
-                        <p className='rejectStatus'>Reject</p>
+                    {response.status === 'Resolved' ?
+                      
+                      (
+                        <p className='approveStatus'>Resolved</p>
+                     
+                      )
+                      : response.status === 'Rejected' ?
+                        (
+                        <p className='rejectStatus'>Rejected</p>
+                     
+                      )
+                        
+                        : 
+                       (<div className='optionalStatus'>
+                        <p className='approveStatus' onClick={()=> acceptOrReject('Resolved')}>Approve</p>
+                        <p className='rejectStatus' onClick={() => acceptOrReject('Rejected')}>Reject</p>
                       </div>
                       )
                     }</div>
@@ -97,7 +116,17 @@ if (!response) {
             </div>
             <div className="thirdContainer">
               <div className="proof">
-                <p>Proof</p>
+               
+
+                {(proof) ?
+                  <img src={`${proof}`} alt="User proof" className="proofImage"/>
+                  : ( 
+                    <>
+                      <p>Proof</p>
+                      <h1>Loading image</h1>
+                    </>
+                  )
+                }
                         </div>
             </div>
         </div>

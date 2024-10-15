@@ -1,7 +1,9 @@
 const express = require('express');
 const server = express();
 const dotenv = require('dotenv');
+const bodyParser = require('body-parser')
 dotenv.config();
+
 
 const loginRouter = require('./routes/loginRoute');
 const userWriteFormRouter = require('./routes/userWriteForm');
@@ -16,8 +18,11 @@ const cors = require('cors')
 const port = process.env.PORT || 3001;
 
 dbConnect();
-server.use(express.json());
+server.use(express.json({ limit: '10mb' })); // This handles JSON body parsing with a limit
+server.use(express.urlencoded({ limit: '10mb', extended: true })); // Handles URL-encoded payloads
+
 server.use(cors())
+
 server.use('/api', loginRouter,userWriteFormRouter,submissionRouter,dashboardCountController);
 // server.use('/api',)
 

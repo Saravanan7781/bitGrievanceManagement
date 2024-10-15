@@ -14,12 +14,10 @@ function Sidebar() {
   const [showSidebar, setshowSidebar] = useState(false);
   const navigate = useNavigate();
   const onMouseOver = () => {
-    console.log("1");
     setshowSidebar(true)
   }
 
   const onMouseOut = () => {
-    console.log("0");
     setshowSidebar(false)
   }
 

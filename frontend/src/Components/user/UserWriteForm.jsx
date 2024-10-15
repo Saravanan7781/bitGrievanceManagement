@@ -8,12 +8,13 @@ function UserWriteForm() {
     const [textValue, setTextValue] = useState('');
   const [selectedOption, setSelectedOption] = useState('Electrical');
   const [image, setImage] = useState(null);
+  const [preview, setPreview] = useState();
   const [userId, setUserId] = useState();
 
   useEffect(() => {
     const getUserId = async (req, res) => {
       let token = Cookies.get('JWT');
-      // console.log(token)
+
       const answer = await axios.get('http://127.0.0.27:7777/api/user/current', {
         headers: {
           Authorization: `Bearer ${token}`
@@ -41,7 +42,16 @@ function UserWriteForm() {
 
   const handleImageChange = (event) => {
     const file = event.target.files[0];
-    setImage(file);
+    const reader = new FileReader();
+    reader.onloadend = () => {
+      setPreview(reader.result);
+      setImage(reader.result);
+
+    }
+
+    if (file) {
+      reader.readAsDataURL(file);
+    }
   };
 
 
@@ -55,7 +65,7 @@ function UserWriteForm() {
         user_id:userId._id,
         domain: selectedOption,
         desc: textValue,
-        // proof: image
+        proof: image
       });
 
       console.log(response);
@@ -109,7 +119,7 @@ function UserWriteForm() {
         />
       </label>
       <br />
-      {image && <img src={URL.createObjectURL(image)} alt="Uploaded" />}
+      {preview && <img src={(preview)} alt="Uploaded" className="previewImage"/>}
       <br />
       </div>
       <div className="btnArea">

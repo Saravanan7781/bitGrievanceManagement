@@ -24,8 +24,6 @@ const tokenValidator = (req, res, next) => {
     else{
         res.status(401).json("Unauthorized User");
     }
-
-
 }
 
 module.exports = tokenValidator;

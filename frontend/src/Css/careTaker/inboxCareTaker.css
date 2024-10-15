@@ -42,6 +42,12 @@
    background-color: #E6E6FA;
 }
 
+.withoutHostel{
+        grid-template-columns: .2fr .3fr .4fr .4fr .4fr .6fr .5fr;  
+}
+
+
+
 .Captions{
      height: 6vh;
     display: flex;
@@ -119,6 +125,10 @@
     
 }
 
+.withoutHostelForAdminMain {
+    grid-template-columns: .37fr .9fr 1fr 1fr .60fr 2fr .8fr .18fr;
+}
+
 .pendingStyle{
     border: 3px solid rgb(252, 252, 46);
     background-color: rgb(252, 252, 46);
@@ -132,4 +142,12 @@
     background-color: rgb(32, 253, 32);
     border-radius: 1.2ch;
     padding: .5vh 1vh;
+}
+
+.rejectedStyle{
+         border: 1px solid rgb(201, 18, 18);
+        background-color: rgb(201, 18, 18);
+        border-radius: 1.2ch;
+        color: white;
+        padding: .5vh 1vh;
 }

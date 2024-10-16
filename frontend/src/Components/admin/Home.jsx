@@ -41,7 +41,7 @@ function Home() {
 
   return (
     (realResponse.role === 'admin') ?
-      (<CaretakerHome />) :
+      (<AdminHome />) :
       (realResponse.role) == 'caretaker' ? (<CaretakerHome />) : (<UserWriteForm />)
    
   );

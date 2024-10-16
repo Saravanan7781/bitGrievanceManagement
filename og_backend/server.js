@@ -9,6 +9,7 @@ const loginRouter = require('./routes/loginRoute');
 const userWriteFormRouter = require('./routes/userWriteForm');
 const submissionRouter = require('./routes/submissionsRoutes');
 const dashboardCountController = require('./controllers/dashboardCountController')
+const userProfileRouter = require('./routes/userProfileRoute');
 
 const dbConnect = require('./config/dbConnect');
 const tokenValidator = require('./middlewares/tokenValidator');
@@ -23,7 +24,7 @@ server.use(express.urlencoded({ limit: '10mb', extended: true })); // Handles UR
 
 server.use(cors())
 
-server.use('/api', loginRouter,userWriteFormRouter,submissionRouter,dashboardCountController);
+server.use('/api', loginRouter,userWriteFormRouter,submissionRouter,userProfileRouter,dashboardCountController);
 // server.use('/api',)
 
 server.use(errorHandler);

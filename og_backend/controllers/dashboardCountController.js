@@ -112,8 +112,8 @@ const dashboardCountController = async(req, res) => {
 
         const totalRes = (total[0].count)
         const resolvedRes = (resolved[0])?(resolved[0].resolvedCount) : 0;
-        const pending = totalRes - resolvedRes;
         const rejectedRes = rejected[0] ? (rejected[0].rejectedCount) : 0;
+        const pending = totalRes - (resolvedRes+rejectedRes);
 
         res.json({
             hostel,

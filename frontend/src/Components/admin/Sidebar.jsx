@@ -26,7 +26,10 @@ function Sidebar() {
       <div className={`sidebarContent ${showSidebar ? 'show' : ''}`}>
       <ul className="sidebarElements"  >
           <li>
-            <div className="sidebarInnerEle" onClick={() => { navigate('/home'); console.log('hi') } }>
+            <div className="sidebarInnerEle" onClick={() => {
+              navigate('/home');
+              console.log('hi')
+            }}>
               <div className="temp">
                 <a>
                   <MdOutlineDashboard size={25} />

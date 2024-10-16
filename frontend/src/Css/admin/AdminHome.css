@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
+
 .Adminhome {
     height: 100vh;
     width: 100vw;
@@ -20,17 +24,19 @@
 }
 
 
-h1 {
-    margin: 10px;
+.PageOuter h1{
+    font-family: "Poppins", sans-serif;
+        font-weight: 500;
+        font-style: normal;
 }
 
 
 .Outerbox {
-    border: 1px solid rgb(186, 186, 186);
+    border: 2px solid rgb(186, 186, 186);
     border-radius: 20px;
     box-shadow: 2px 1px 3px #808080;
     height: 70vh;
-    width: 70vw;
+    width: 66vw;
     margin: auto;
     display: grid;
     padding: 10px;
@@ -39,7 +45,12 @@ h1 {
     grid-template-rows: repeat(2, 1fr);
     /* Create 2 equal rows */
     gap: 30px;
+    transition: .5s all;
     /* Optional: Add some space between the grid items */
+}
+
+.Outerbox:hover{
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.475);
 }
 
 
@@ -47,7 +58,7 @@ h1 {
 .ViewAdmin,
 .ViewReport,
 .ViewFb {
-    height: 70%;
+    height: 60%;
     width: 70%;
     font-size: 18px;
     margin: auto;
@@ -59,9 +70,34 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
+    font-family: "Poppins", sans-serif;
+        font-weight: 500;
+        font-style: normal;
+        transition: .3s all;
 }
 
+.AddAdmin:hover,
+.ViewAdmin:hover,
+.ViewReport:hover,
+.ViewFb:hover{
+    cursor: pointer;
+}
 
+.AddAdmin:hover{
+    scale: 1.01;
+}
+
+.ViewAdmin:hover{
+    scale: 1.01;
+}
+
+.ViewReport:hover{
+    scale: 1.01;
+}
+
+.ViewFb:hover {
+    scale: 1.01;
+    }
 .icon1,
 .icon2,
 .icon3,

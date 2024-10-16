@@ -3,15 +3,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
 
 
-.inboxForFlex{
+.inboxForFlex {
     height: 100dvh;
-     display: flex;
-    justify-content:center;
+    display: flex;
+    justify-content: center;
     align-items: center;
-   
+
 }
 
-.inboxAdminOuter{
+.inboxAdminOuter {
     height: 75vh;
     width: 90vw;
     background-color: white;
@@ -23,46 +23,46 @@
     padding: 1.2rem;
 }
 
-.inboxAdminOuter h1{
+.inboxAdminOuter h1 {
     text-align: center;
     font-family: "Pixelify Sans", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 500;
-  font-style: normal;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
 }
 
-.inboxAdminCaption{
+.inboxAdminCaption {
     max-height: calc(70vh - 39px);
     width: 100%;
     /* border: 3px solid  black ; */
     border-radius: 2ch;
     display: grid;
-    grid-template-columns: .2fr .75fr .80fr repeat(3,.75fr) 2fr .75fr .24fr;
-   border-radius: 2ch;
-   background-color: #E6E6FA;
+    grid-template-columns: .2fr .75fr .80fr repeat(3, .75fr) 2fr .75fr .24fr;
+    border-radius: 2ch;
+    background-color: #E6E6FA;
 }
 
-.withoutHostel{
-        grid-template-columns: .2fr .3fr .4fr .4fr .4fr .6fr .5fr;  
+.withoutHostel {
+    grid-template-columns: .2fr .3fr .4fr .4fr .4fr .6fr .5fr;
 }
 
 
 
-.Captions{
-     height: 6vh;
+.Captions {
+    height: 6vh;
     display: flex;
     justify-content: center;
     align-items: center;
-     /* background-color: #E6E6FA; */
-     /* border: 3px solid black; */
+    /* background-color: #E6E6FA; */
+    /* border: 3px solid black; */
 }
 
-.Captions h1{
-     font-size: clamp(16px, calc(16px + 1vw), 20px);
-     font-family: "Poppins", sans-serif;
-      /* background-color: #E6E6FA; */
-  font-weight: 600;
-  font-style: normal;
+.Captions h1 {
+    font-size: clamp(16px, calc(16px + 1vw), 20px);
+    font-family: "Poppins", sans-serif;
+    /* background-color: #E6E6FA; */
+    font-weight: 600;
+    font-style: normal;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
@@ -71,83 +71,86 @@
 
 
 .listOfStudents {
-    margin-top: 20px ;
+    margin-top: 20px;
     border-bottom: 2px solid rgb(216, 211, 211);
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow-x: auto; /* Show scrollbar only when text overflows */
-    white-space: nowrap; /* Prevent text from wrapping */
-    scroll-snap-type: x proximity; /* Enable snapping behavior */
+    overflow-x: auto;
+    /* Show scrollbar only when text overflows */
+    white-space: nowrap;
+    /* Prevent text from wrapping */
+    scroll-snap-type: x proximity;
+    /* Enable snapping behavior */
 }
 
-.inboxAdminMain:nth-child(n):hover{
-    background-color:  #E6E6FA;
+.inboxAdminMain:nth-child(n):hover {
+    background-color: #E6E6FA;
     cursor: pointer;
-     border-radius: 2ch;
+    border-radius: 2ch;
 }
 
-.listOfStudents:last-child{
-     border: none;
+.listOfStudents:last-child {
+    border: none;
 }
 
-.eye{
+.eye {
     padding: .5vw;
-   transition: .4s;
+    transition: .4s;
     display: flex;
     clip-path: circle();
     cursor: pointer;
     justify-content: center;
     align-items: center;
-   
+
 }
 
-.eye:hover{
+.eye:hover {
     clip-path: circle();
-     background-color: rgba(216, 212, 212, 0.74);
-     
+    background-color: rgba(216, 212, 212, 0.74);
+
 }
 
 
-.listOfStudents h1{
+.listOfStudents h1 {
     font-size: clamp(16px, calc(12px + 1vw), 18px);
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
     font-family: "Poppins", sans-serif;
-  font-weight: 500;
-  font-style: normal;
+    font-weight: 500;
+    font-style: normal;
 }
 
-.inboxAdminMain{
+.inboxAdminMain {
     display: grid;
     grid-template-columns: .2fr .75fr .80fr .75fr .80fr .60fr 2fr .75fr .24fr;
-    
+
 }
 
 .withoutHostelForAdminMain {
     grid-template-columns: .37fr .9fr 1fr 1fr .60fr 2fr .8fr .18fr;
 }
 
-.pendingStyle{
+.pendingStyle {
     border: 3px solid rgb(252, 252, 46);
     background-color: rgb(252, 252, 46);
     border-radius: 1ch;
-    padding: .5vh  1vh;
+    padding: .5vh 1vh;
 }
 
 
-.resolvedStyle{
+.resolvedStyle {
     border: 1px solid rgb(32, 253, 32);
     background-color: rgb(32, 253, 32);
     border-radius: 1.2ch;
     padding: .5vh 1vh;
 }
 
-.rejectedStyle{
-         border: 1px solid rgb(201, 18, 18);
-        background-color: rgb(201, 18, 18);
-        border-radius: 1.2ch;
-        color: white;
-        padding: .5vh 1vh;
+.rejectedStyle {
+    border: 1px solid rgb(201, 18, 18);
+    background-color: rgb(201, 18, 18);
+    border-radius: 1.2ch;
+    color: white;
+    padding: .5vh 1vh;
 }

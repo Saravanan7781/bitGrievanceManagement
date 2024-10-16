@@ -1,0 +1,64 @@
+/* CreateUser.css */
+
+.CreateUserPage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+}
+
+.Createuserform {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* Two-column layout */
+    gap: 20px;
+    width: 400px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.Createuserform input,
+.Createuserform select {
+    grid-column: span 2;
+    /* Make inputs span two columns */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.Createuserform button {
+    grid-column: span 2;
+    /* Make button span two columns */
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.Createuserform button:hover {
+    background-color: #0056b3;
+}
+
+.Createuserform select {
+    background-color: #fff;
+    color: #333;
+}
+
+.Createuserform input[type="password"],
+.Createuserform input[type="text"],
+.Createuserform input[type="email"] {
+    grid-column: span 2;
+}
+
+/* Adjust gap for optional fields */
+.Createuserform input:nth-child(odd) {
+    margin-right: 10px;
+}

@@ -1,0 +1,100 @@
+/* Blurring the background */
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    /* Dark overlay */
+    backdrop-filter: blur(10px);
+    /* Blurs the background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    /* Make sure it's above everything else */
+}
+
+
+/* Styling the modal content */
+.modalContent {
+    background-color: rgba(242, 242, 236, 0.93);
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    height: 50%;
+    max-width: 600px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.studentDetailContent{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.userStudent{
+    display: grid;
+    grid-template-columns: auto auto;
+    column-gap: 40%;
+    row-gap: 10%;
+}
+
+.userAdmin{
+    display: grid;
+    grid-template-columns: auto auto;
+    column-gap: 40%;
+    row-gap: 30%;
+}
+
+.modalContent h1{
+    text-align: center;
+}
+
+/* Flexbox container */
+.profileContainer {
+    display: flex;
+    /* justify-content: space-between; */
+    /* align-items: center; */
+    height: 70%;
+ 
+}
+
+.information {
+    flex: 2;
+    padding-right: 20px;
+}
+
+.information p {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+/* User icon section */
+.userIcon {
+    display: flex;
+    width: 50%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.userIcon p {
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+/* h1 {
+    font-size: 24px;
+   
+    text-align: center;
+}
+
+p {
+    margin-bottom: 10px;
+    font-size: 20px;
+    padding: 10px;
+} */

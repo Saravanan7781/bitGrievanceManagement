@@ -1,101 +1,165 @@
-.mainAddUser{
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
+
+/* Container for the user list */
+.UserListForFlex {
     height: 100dvh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
-    /* background-color: black; */
-    /* border: 3px solid white; */
+
+}
+
+/* Outer container */
+.UserListOuter {
+    width: 100%;
+    max-width: 1200px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 1%;
+    translate:0 7%;
+    overflow: hidden;
+    height: 70vh;
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Center the content horizontally */
+}
+
+/* Header section */
+.headersec {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    /* Ensure it spans the full width */
+    margin-bottom: 10px;
+}
+
+/* Center the "USERS" header */
+.headersec h1 {
+    flex: 1;
+    text-align: center;
+    margin: 0;
+    color: #333;
+        font-family: "Poppins", sans-serif;
+            font-weight: 500;
+            font-style: normal;
+}
+
+/* Filter section */
+.filterSection {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Caption section (column titles) */
+.UserListCaption {
+    display: grid;
+    grid-template-columns: .5fr 1fr 1fr 1fr 1fr .8fr 50px;
+    /* Adjust column widths */
+    text-align: center;
+    background-color: #E6E6FA;
+    border-radius: 8px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    width: 100%;
+    /* Span full width */
+}
+
+/* Caption titles */
+.UserListCaptions {
+    display: flex;
+    align-items: center;
+    justify-content: center;    
+    font-size: .7rem;
+    font-family: "Poppins", sans-serif;
+     
+    font-style: normal;
+}
+
+.UserListCaptions h1{
+    font-weight: 600;
+}
+
+/* Scrollable container */
+.UserListMainContainer {
+    flex: 1;
+    overflow-y: auto;
+    width: 100%;
+    /* Span full width */
+}
+
+/* Custom scrollbar styling */
+.UserListMainContainer::-webkit-scrollbar {
+    width: 6px;
+}
+
+.UserListMainContainer::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius: 10px;
+}
+
+/* Individual user entry */
+.UserListMain {
+    display: grid;
+    grid-template-columns: .5fr 1fr 1fr 1fr 1fr .8fr 50px;
+    /* Match the header */
+    text-align: center;
+    align-items: center;
+    padding: 12px 0;
+border-bottom: 2px solid rgb(216, 211, 211);
+}
+
+.UserListMain:hover {
+    background-color: #f9f9f9;
+}
+
+/* User entry content */
+.UserList {
+    display: flex;
+    align-items: center;
     justify-content: center;
-    align-items: center;
 }
 
-
-.AddUserOuter{
-        height: 60dvh;
-        width: 75%;
-        border-radius: 3ch;
-        border: 3px solid firebrick;
-        transform: translateY(10%);
-       
-        
+/* Text inside each cell */
+.UserList h1 {
+    font-size: 1rem;
+    color: #333;
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+        font-weight: 500;
+        font-style: normal;
 }
 
-
-
-.addUserbtn{
-    height: 30px;
-    width: 70px;
-    border-radius: .75ch;
-    border: 1px solid firebrick;
-}
-
-.topOfAddUser{
-     display: flex;
-        justify-content: space-around;
-        gap: 50vw;
-        margin-top: 2vh;
-}
-
-
-.searchBar{
-    height: 5vh;
-    width: 45%;
-    /* border: 1px solid blue; */
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    /* background-color: white; */
-}
-
-.searchBar input{
-    height: 5vh;
-    width: 90%;
-    outline: none;
-    font-size: 1.2rem;
-    padding-inline-start: .5vw;
-    border: none;
-    border-radius: 1ch;
-}
-
-.secondTop{
-     height: 7vh;
-    margin-left: 4vw;
-    margin-top: 2vh;
-    width: 80%;
-    /* border: 1px solid blueviolet; */
-    display: flex;
-    align-items: center;
-}
-
-.options{
-    margin-inline-start: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+/* Eye icon */
+.eye {
     cursor: pointer;
-    
+    color: #333;
+    transition: color 0.3s ease;
 }
 
-.option1{
-    border-radius: 1ch 0 0 1ch;
-    border-right: 1px solid black;
+.eye:hover {
+    color: #007bff;
 }
 
+/* Responsive adjustments */
+@media (max-width: 768px) {
 
-.option2{
-     border-radius: 0 1ch 1ch 0;
+    .UserListCaption,
+    .UserListMain {
+        grid-template-columns: 1fr 2fr 1fr 50px;
+    }
 }
 
-.option1clicked{
-    background-color: #1181b3;
-    color: #fff;
+@media (max-width: 576px) {
+
+    .UserListCaption,
+    .UserListMain {
+        grid-template-columns: 1fr 1fr 50px;
+    }
 }
-.option1,.option2{
-    height: 40px;
-    width: 80px;
-    
-      display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #fff;
-    
-} 

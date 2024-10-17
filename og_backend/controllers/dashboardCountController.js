@@ -1,7 +1,10 @@
 const submissionModel = require('../models/userWriteForm');
 let total, pending,rejected;
+const express = require('express');
+const router = express.Router();
 
-const dashboardCountController = async(req, res) => {
+
+router.post('/user/adminCount', async(req, res) => {
     const { role, hostel } = req.body;
     if (role === 'admin') {
         try {
@@ -126,6 +129,5 @@ const dashboardCountController = async(req, res) => {
     // console.log(role)
     return;
 }
-
-
-module.exports = dashboardCountController;
+)
+module.exports = router;

@@ -1,7 +1,7 @@
 import React from 'react'
 import '../../Css/careTaker/inboxCareTaker.css';
 import { FaRegEye } from "react-icons/fa";
-import {useNavigate} from 'react-router-dom'
+import {useNavigate,useSearchParams} from 'react-router-dom'
 import {useState, useEffect} from 'react'
 import axios from 'axios'
 import Cookies from 'js-cookie'
@@ -10,13 +10,14 @@ function InboxAdmin() {
     const navigate = useNavigate();
     const [response, setResponse] = useState([]);
     const [userData, setUserData] = useState();
-
+    const [searchParams] = useSearchParams();
+    const preferred = searchParams.get('search');
     const viewBrief = (userId) => {
         navigate(`/viewReport/${userId}`);
     };
 
     useEffect(() => {
-
+        
         const checkToken = async () => {
             let token = Cookies.get('JWT');
             if (!token) {
@@ -42,7 +43,7 @@ function InboxAdmin() {
              if (userData) {
 
                 try {
-                    let res = await axios.post('http://127.0.0.27:7777/api/user/submissions', {
+                    let res = await axios.post(`http://127.0.0.27:7777/api/user/submissions?search=${preferred}`, {
                         role: userData.role,
                         hostel: userData.hostel
                     });

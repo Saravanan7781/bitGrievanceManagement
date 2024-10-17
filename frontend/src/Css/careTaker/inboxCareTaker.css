@@ -71,7 +71,8 @@
 
 
 .listOfStudents {
-    margin-top: 20px;
+    /* margin-top: 20px; */
+    padding: 4% 0;
     border-bottom: 2px solid rgb(216, 211, 211);
     display: flex;
     justify-content: center;

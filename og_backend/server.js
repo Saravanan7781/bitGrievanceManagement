@@ -24,8 +24,8 @@ server.use(express.urlencoded({ limit: '10mb', extended: true })); // Handles UR
 
 server.use(cors())
 
-server.use('/api', loginRouter,userWriteFormRouter,submissionRouter,userProfileRouter,dashboardCountController);
-// server.use('/api',)
+server.use('/api', loginRouter,userWriteFormRouter,submissionRouter,userProfileRouter,);
+server.use('/api',dashboardCountController)
 
 server.use(errorHandler);
 

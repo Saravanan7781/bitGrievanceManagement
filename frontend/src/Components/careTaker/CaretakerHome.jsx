@@ -6,6 +6,11 @@ import {useState, useEffect} from 'react'
 import { BsCalendar2Check } from 'react-icons/bs';
 import { PiNotepadBold } from "react-icons/pi";
 import { MdOutlinePendingActions } from 'react-icons/md';
+
+
+//CSS FOR THIS FILE IS IN Home.css
+
+
 import pending from '/Projects/bitGrievanceManagement/frontend/src/Logos/pending.png'
 import resolved from '/Projects/bitGrievanceManagement/frontend/src/Logos/resolved.png'
 import total from '/Projects/bitGrievanceManagement/frontend/src/Logos/total.png'
@@ -16,6 +21,14 @@ function CaretakerHome() {
   const token = Cookies.get('JWT');
   const [realResponse, setRealResponse] = useState(null);
   const [dashboardInfo, setDashboardInfo] = useState(null);
+
+  function dashboardClicked(params) {
+    (params)?
+      navigate(`/inbox?search=${params}`) :
+      navigate(`/inbox`)
+  }
+
+
   useEffect(() => {
     const checkToken = async () => {
       if (!token) {
@@ -69,10 +82,15 @@ function CaretakerHome() {
 
   const list = dashboardInfo
     ? [
-        { id: 1, title: 'RESOLVED', total: dashboardInfo.resolved || 0 }, // Fetch total complaints
+      {
+        id: 1, title: 'RESOLVED', total: dashboardInfo.resolved || 0,
+          preferred: "Resolved"
+         }, // Fetch total complaints
         { id: 2, title: 'TOTAL COMPLAINTS', total: dashboardInfo.total || 0 }, // Fetch resolved complaints
-      { id: 3, title: 'PENDING', total: dashboardInfo.pending || 0 },
-         { id: 4, title: 'REJECTED', total: dashboardInfo.rejected || 0 },
+      { id: 3, title: 'PENDING', total: dashboardInfo.pending || 0 ,
+          preferred: "Pending"},
+         { id: 4, title: 'REJECTED', total: dashboardInfo.rejected || 0 ,
+          preferred: "Rejected"},
          // Fetch pending complaints
       ]
     : [
@@ -87,7 +105,7 @@ function CaretakerHome() {
       <div className={`dashboardGrid info1`}>
         {list.map((ele) => (
           <div className='dashboardInfos' key={ele.id}>
-            <div className='info'>
+            <div className='info' onClick={()=>dashboardClicked(ele.preferred)}>
               <div className="infoCaption">
                    <h1>{ele.title}</h1>
               </div>

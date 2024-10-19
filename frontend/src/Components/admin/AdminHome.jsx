@@ -24,12 +24,6 @@ function AdminHome() {
         <div className="PageOuter">
          {/* <h1>Admin Home</h1> */}
          <div className="Outerbox">
-            <div className="AddAdmin" onClick={() => { navigate('/CreateUser'); console.log('redirect to createUser') }}><RiUserAddFill className="icon1" />
-              Add USER</div>
-            <div className="ViewAdmin" onClick={() => { navigate('/addUser'); console.log('redirect to createUser') }}>
-              <RiUserSearchFill className="icon2" />
-              VIEW USERS
-            </div>
             <div className="ViewReport" onClick={() => {
               setDashboardView(true);
               // navigate('/inbox');
@@ -37,6 +31,13 @@ function AdminHome() {
             }}>
               <HiDocumentSearch className="icon3" />
               VIEW REPORTS</div>
+            <div className="ViewAdmin" onClick={() => { navigate('/addUser'); console.log('redirect to createUser') }}>
+              <RiUserSearchFill className="icon2" />
+              VIEW USERS
+            </div>
+            
+            <div className="AddAdmin" onClick={() => { navigate('/CreateUser'); console.log('redirect to createUser') }}><RiUserAddFill className="icon1" />
+              Add USER</div>
          <div className="ViewFb"> <MdFeedback className="icon4"/>VIEW FEEDBACK</div>
        </div>
         </div>

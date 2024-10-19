@@ -10,9 +10,7 @@ import axios from 'axios';
 function MainHeader() {
   const navigate = useNavigate();
 
-  const Logout = () => {
-    navigate('/'); // Log out and navigate to home
-  }
+ 
 
   const handleProfileClick = async () => {
     const token = Cookies.get('JWT'); // Get the JWT from cookies
@@ -45,7 +43,7 @@ function MainHeader() {
           </li>
           <li>
             <a onClick={handleProfileClick} style={{ cursor: 'pointer' }}>
-              <CgProfile size={24} />
+              <CgProfile size={25} />
             </a>
           </li>
           <li>
@@ -57,9 +55,6 @@ function MainHeader() {
         <ul className='leftCenterContent'>
           <li><h1><a href=''>BIT</a></h1></li>
           <li><h1>Compliance Management</h1></li>
-        </ul>
-        <ul className="bottomRightContent" onClick={Logout}>
-          <li>Logout</li>
         </ul>
       </div>
       <Sidebar />

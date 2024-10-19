@@ -50,39 +50,39 @@ const UserProfile = () => {
                <div className='studentDetailContent'>
                   {user.role === 'student' && (
                      <div className="userStudent">
-                        <strong>Name:</strong> 
-                        <p>{ user.name}</p>
+                        <p className='userProfileCaption'>Name:</p> 
+                        <p className="userProfileAnswer">{ user.name}</p>
 
-                        <strong>Email:</strong>
-                        <p>{user.email}</p>
+                        <p className='userProfileCaption'>Email:</p>
+                        <p className="userProfileAnswer">{user.email}</p>
 
-                        <strong>Roll No:</strong> 
-                        <p>{ user.rollno}</p>
+                        <p className='userProfileCaption'>Roll No:</p> 
+                        <p className="userProfileAnswer">{ user.rollno}</p>
 
-                        <strong>Room No:</strong> 
-                        <p>{user.room}</p>
+                        <p className='userProfileCaption'>Room No:</p> 
+                        <p className="userProfileAnswer">{user.room}</p>
                         
-                        <strong>Hostel:</strong> <p>{user.hostel}</p>
-                        <strong>Caretaker:</strong>
-                        <p>{user.caretakerName}</p>
+                        <p className='userProfileCaption'>Hostel:</p> <p className="userProfileAnswer">{user.hostel}</p>
+                        <p className='userProfileCaption'>Caretaker:</p>
+                        <p className="userProfileAnswer">{user.caretakerName}</p>
                      </div>
                   )}
                   {user.role === 'caretaker' && (
                      <div className="userAdmin">
-                        <strong>Name:</strong> 
-                        <p>{ user.name}</p>
-                        <strong>Hostel:</strong> <p>{user.hostel}</p>
-                        <strong>Email:</strong>
-                        <p>{user.email}</p>
+                        <p className='userProfileCaption'>Name:</p> 
+                        <p className="userProfileAnswer">{ user.name}</p>
+                        <p className='userProfileCaption'>Hostel:</p> <p className="userProfileAnswer">{user.hostel}</p>
+                        <p className='userProfileCaption'>Email:</p>
+                        <p className="userProfileAnswer">{user.email}</p>
                      </div>
                     
                   )}
                   {user.role === 'admin' && (
                      <div className="userAdmin">
-                        <strong>Name:</strong> 
-                        <p>{ user.name}</p>
-                        <strong>Email:</strong>
-                        <p>{user.email}</p>
+                        <p className='userProfileCaption'>Name:</p> 
+                        <p className="userProfileAnswer">{ user.name}</p>
+                        <p className='userProfileCaption'>Email:</p>
+                        <p className="userProfileAnswer">{user.email}</p>
                      </div>
                     
                   )}

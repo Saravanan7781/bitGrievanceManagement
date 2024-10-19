@@ -21,6 +21,12 @@
     transform: translateY(7vh);
     border-radius: 2ch;
     padding: 1.2rem;
+    overflow-y: scroll;
+}
+
+.inboxAdminOuter::-webkit-scrollbar {
+   display: none;
+    /* Adjust the width of the scrollbar */
 }
 
 .inboxAdminOuter h1 {

@@ -1,10 +1,11 @@
 const userWriteForm = require("../models/userWriteForm");
-const mongoose = require('mongoose');
+const mongoose = require('mongoose')
 const viewSubmissionController = async (req, res) => {
     try {
         const id = req.params.id;
-
-        const submission = await userWriteForm.aggregate([
+        // console.log(role);
+       
+             const submission = await userWriteForm.aggregate([
             {
                 $match: {
                     _id: new mongoose.Types.ObjectId(id) 
@@ -24,6 +25,8 @@ const viewSubmissionController = async (req, res) => {
         ]);
         //  console.log(submission)
         res.json(submission);
+        
+       
     }
     catch (err) {
         res.status(500).json({ message: "Error fetching submission" });

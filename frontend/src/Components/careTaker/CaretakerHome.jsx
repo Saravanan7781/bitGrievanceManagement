@@ -11,10 +11,10 @@ import { MdOutlinePendingActions } from 'react-icons/md';
 //CSS FOR THIS FILE IS IN Home.css
 
 
-import pending from '/Projects/bitGrievanceManagement/frontend/src/Logos/pending.png'
-import resolved from '/Projects/bitGrievanceManagement/frontend/src/Logos/resolved.png'
-import total from '/Projects/bitGrievanceManagement/frontend/src/Logos/total.png'
-import rejected from '/Projects/bitGrievanceManagement/frontend/src/Logos/rejected.png'
+import pending from '../../Logos/pending.png'
+import resolved from '../../Logos/resolved.png'
+import total from'../../Logos/total.png'
+import rejected from'../../Logos/rejected.png'
 
 function CaretakerHome() {
     const navigate = useNavigate();
@@ -42,8 +42,6 @@ function CaretakerHome() {
           }
         })
         setRealResponse(response.data);
-        console.log("from caretaker's page");
-        // console.log(realResponse) 
       }
 
     }
@@ -56,8 +54,6 @@ function CaretakerHome() {
 
   useEffect(() => {
     const getDashboardDetails = async (realResponse) => {
-      // console.log(realResponse.role);
-      // console.log(realResponse.hostel)
         const dashboardResult = await axios.post('http://127.0.0.27:7777/api/user/adminCount', {
           role: realResponse.role,
           hostel: realResponse.hostel 
@@ -77,7 +73,6 @@ function CaretakerHome() {
   )
   
   useEffect(() => {
-    console.log(dashboardInfo)
   },[dashboardInfo])
 
   const list = dashboardInfo

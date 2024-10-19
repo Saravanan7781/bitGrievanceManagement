@@ -40,7 +40,7 @@ function InboxAdmin() {
 
      useEffect(() => {
          const fetchSubmissions = async () => {
-             if (userData) {
+             if (userData && userData.role!=='student') {
 
                 try {
                     let res = await axios.post(`http://127.0.0.27:7777/api/user/submissions?search=${preferred}`, {
@@ -51,7 +51,25 @@ function InboxAdmin() {
                 } catch (err) {
                     console.log("Error while getting the submissions:", err);
                 }
-            }
+             }
+             else if(userData && userData.role==='student'){
+                 try {
+                    //  console.log(userData)
+                     let result = await axios.post(`http://127.0.0.1:7777/api/user/submissions?search=${userData._id}`, {
+                         role: userData.role
+                     })
+                     if (result) {
+                         console.log(result.data)
+                         setResponse(result.data);
+                     }
+                     else {
+                         console.log("Error while displaying the submissions for student in axios")
+                     }
+                 }
+                 catch (err) {
+                     
+                 }
+             }
         };
 
         fetchSubmissions();
@@ -61,7 +79,7 @@ function InboxAdmin() {
     return (
       <div className="inboxForFlex">
       <div className='inboxAdminOuter'>
-                <h1>Inbox</h1>
+                <h1>{(userData && userData.role==='student')?`History`:`Inbox`}</h1>
                 <div className={(userData && userData.role !=='caretaker')?'inboxAdminCaption':'inboxAdminCaption  withoutHostel'}>
                         <div className="Captions">
                             <h1>Id</h1>
@@ -96,7 +114,7 @@ function InboxAdmin() {
                     </div>
                 </div>
                 
-                {
+                {response && (
                     response.map((data,index) =>
                         <div className={(userData.role==='caretaker')?'inboxAdminMain withoutHostelForAdminMain':"inboxAdminMain"} key={ data._id}>
                      <div className="listOfStudents">
@@ -134,7 +152,7 @@ function InboxAdmin() {
                         </div>
                     </div>
                 </div>
-                    
+                    )
                     )
                 }
                
@@ -142,8 +160,10 @@ function InboxAdmin() {
                          
             </div>
             
-    </div>
-  )
+        </div>
+        
+    )
+    
 }
 
 export default InboxAdmin;

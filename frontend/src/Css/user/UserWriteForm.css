@@ -35,6 +35,7 @@ h2 {
     margin: auto;
     display: flex;
     flex-direction: column;
+    transform: translateY(6.7%);
     align-items: flex-start;
     padding: 2% 3% 2% 3%;
 }

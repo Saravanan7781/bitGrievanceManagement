@@ -84,7 +84,7 @@ function UserWriteForm() {
   return (
     <div className='GrievancePage'>
         <div className="formOuter">
-            <h2>GRIEVANCE FORM</h2>
+            {/* <h2>GRIEVANCE FORM</h2> */}
             <form className='formInner' onSubmit={handleSubmit}>
       <label>
         <p>SELECT DOMAIN</p> <br></br>

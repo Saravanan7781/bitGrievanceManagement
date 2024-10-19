@@ -5,15 +5,17 @@ import axios from 'axios';
 
 function BriefReport() {
   const { id } = useParams();
+ 
   const [response, setResponse] = useState();
   const [status, setStatus] = useState(null);
   const [proof, setProof] = useState(null);
   useEffect(() => {
     const fetchDetails = async () => {
-      try {
-        const res = await axios.get(`http://127.0.0.27:7777/api/user/viewSubmission/${id}`)
-        setResponse(res.data[0]);
-        setProof(res.data[0].proof);
+      try { 
+          const res = await axios.get(`http://127.0.0.27:7777/api/user/viewSubmission/${id}`)
+          setResponse(res.data[0]);
+          setProof(res.data[0].proof);
+      
       }
       catch (err) {
         console.log(err);
@@ -21,19 +23,26 @@ function BriefReport() {
     }
 
     fetchDetails();
-  }, [id]);
+  }, [id]);   
 
+  useEffect(() => {
+    if (response !== null) {
+      console.log("response received")
+      console.log(response);
+    }
+  },[response])
 
   const acceptOrReject = async (ans) => {
     const output = await axios.get(`http://127.0.0.27:7777/api/user/submissions/submissionApproval/${id}?status=${ans}`)
     setResponse((prevResponse) => ({...prevResponse,status:ans}))
  }
 
-if (!response) {
-    return <div>Loading...</div>;
-  }
+  if (!response) {
+  <h1>Loading</h1>
+}
 
   return (
+    (response &&
     <div className="mainBriefReport">
       <div className="subBriefReport">
         <h1>View Report</h1>
@@ -52,8 +61,10 @@ if (!response) {
               <div className="firstRow">
                 <div className="name">
                   <div className="nameQ">
-                    <p>Name: </p></div>
-                <p>{response.submissions.name}</p>
+                      <p>Name: </p></div>
+                    {/* (response.role=== */}
+                    <p>{response.submissions.name}</p>
+                    {/* ) */}
                 </div>
                 <div className="mail">
                   <div className="mailQ">
@@ -134,6 +145,7 @@ if (!response) {
           </div>
     </div>
   )
+)
 }
 
 export default BriefReport;

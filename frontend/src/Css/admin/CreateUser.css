@@ -4,61 +4,119 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    background-color: #f4f4f4;
+    min-height: 100vh;
+    background-color: #f4f4f9;
+    flex-direction: column;
 }
+.tempForCreateUse{
+    height: fit-content;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 6vh 8vh;
+        border-radius: 10px;
+}
+
 
 .Createuserform {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    /* Two-column layout */
-    gap: 20px;
-    width: 400px;
-    padding: 20px;
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 1000px;
+    width: 100%;
+    display: flex;
 }
 
-.Createuserform input,
-.Createuserform select {
-    grid-column: span 2;
-    /* Make inputs span two columns */
+.createuser1,
+.Createuser2 {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.createuser1 select,
+.createuser1 input,
+.Createuser2 input {
     padding: 10px;
     border: 1px solid #ccc;
-    border-radius: 4px;
+    border-radius: 5px;
     font-size: 16px;
+    transition: all 0.3s ease-in-out;
 }
 
-.Createuserform button {
-    grid-column: span 2;
-    /* Make button span two columns */
+.extraForCreateUser select{
     padding: 10px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 4px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
     font-size: 16px;
+    transition: all 0.3s ease-in-out;
+}
+.extraForCreateUser select:focus {
+ outline: none;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: all 0.3s ease-in-out;
+}
+.createuser1 select:hover,
+.createuser1 input:hover,
+.Createuser2 input:hover {
+    border-color: #6c63ff;
+}
+
+.createuser1 select:focus,
+.createuser1 input:focus,
+.Createuser2 input:focus {
+    outline: none;
+    border-color: #6c63ff;
+    box-shadow: 0 0 5px rgba(108, 99, 255, 0.5);
+}
+
+.createUserButton{
+    background-color: #6c63ff;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease-in-out;
+    width: 10vw;
 }
 
-.Createuserform button:hover {
-    background-color: #0056b3;
+.createUserButton:hover {
+    background-color: #5753f3;
 }
 
-.Createuserform select {
-    background-color: #fff;
-    color: #333;
+input::placeholder {
+    color: #999;
 }
 
-.Createuserform input[type="password"],
-.Createuserform input[type="text"],
-.Createuserform input[type="email"] {
-    grid-column: span 2;
+.CreateUserPage form {
+    display: flex;
+    gap: 20px;
 }
 
-/* Adjust gap for optional fields */
-.Createuserform input:nth-child(odd) {
-    margin-right: 10px;
+.extraForCreateUser{
+    width: 100%;
+    /* background-color: black; */
+    height: 15vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    .Createuserform {
+        padding: 30px;
+    }
+
+    .createuser1,
+    .Createuser2 {
+        gap: 10px;
+    }
+
+   .createUserButton {
+        font-size: 14px;
+    }
 }

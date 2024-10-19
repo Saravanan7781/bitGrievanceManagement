@@ -1,3 +1,6 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital');
+
 /* Blurring the background */
 .modalOverlay {
     position: fixed;
@@ -22,9 +25,10 @@
     background-color: rgba(242, 242, 236, 0.93);
     padding: 20px;
     border-radius: 10px;
-    width: 80%;
+    width: 50%;
     height: 50%;
-    max-width: 600px;
+    /* max-width: 600px; */
+    font-family: "Poppins", sans-serif;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
@@ -38,15 +42,36 @@
 .userStudent{
     display: grid;
     grid-template-columns: auto auto;
-    column-gap: 40%;
+    column-gap: 10%;
     row-gap: 10%;
+    font-family: "Poppins", sans-serif;
+     /* background-color: #E6E6FA; */
+    font-weight: 400;
+  
+    /* font-style: normal; */
+}
+
+.userProfileCaption{
+    font-weight: 800;
+}
+
+.userProfileAnswer{
+    font-weight: 450;
+}
+
+.userStudent p{
+    font-size: .9rem;    
 }
 
 .userAdmin{
     display: grid;
     grid-template-columns: auto auto;
-    column-gap: 40%;
-    row-gap: 30%;
+    column-gap: 10%;
+     row-gap: 25%;
+    font-family: "Poppins", sans-serif;
+/* background-color: #E6E6FA; */
+     font-weight: 200;
+      /* font-style: normal; */
 }
 
 .modalContent h1{
@@ -87,14 +112,3 @@
     margin-top: 10px;
 }
 
-/* h1 {
-    font-size: 24px;
-   
-    text-align: center;
-}
-
-p {
-    margin-bottom: 10px;
-    font-size: 20px;
-    padding: 10px;
-} */

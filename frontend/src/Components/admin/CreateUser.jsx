@@ -33,7 +33,9 @@ const CreateUser = () => {
   return (
     <>
        <MainHeader />
-    <div className="CreateUserPage">
+      <div className="CreateUserPage">
+        <div className="tempForCreateUse">
+
         <form className="Createuserform" onSubmit={handleSubmit}>
           <div className="createuser1">
       <select name="role" value={userData.role} onChange={handleChange}>
@@ -77,7 +79,7 @@ const CreateUser = () => {
               value={userData.rollno}
               onChange={handleChange}
               required
-            />
+              />
             <input
               type="text"
               name="roomNo"
@@ -99,24 +101,29 @@ const CreateUser = () => {
               placeholder="Warden Name"
               value={userData.wardenName}
               onChange={handleChange}
-            />
+              />
           </div>
         )}
-        {(userData.role === 'student' || userData.role === 'caretaker') && (
-          <>
-          <input
-          type="text"
-          name="hostel"
-          placeholder="Hostel"
-          value={userData.hostel}
-          onChange={handleChange}
-          required
-        />
-          </>)}
         
-        <button type="submit">Create User</button>
-      </form>
-    </div>
+        
+     
+          </form>
+          <div className="extraForCreateUser">
+            {(userData.role === 'student' || userData.role === 'caretaker') && (
+              <>
+           <select name="hostel" value={userData.hostel} onChange={handleChange}>
+          <option value="Emerald">Emerald</option>
+          <option value="South Bhavani">South Bhavani</option>
+          </select>
+              </>)}
+               <button type="submit" className="createUserButton">Create User</button>
+          </div>
+          
+          
+        
+      
+          </div>
+      </div>
     </>
   );
 };

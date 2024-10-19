@@ -1,13 +1,20 @@
 const userWriteForm = require('../models/userWriteForm');
-
+const mongoose = require('mongoose');
+const ObjectId = mongoose.Types.ObjectId
 
 const showSubmissions = async (req, res) => {
-    const {search} = req.query;
-    const { role, hostel } = req.body;
+    let { search } = req.query; 
+    let userId;
+    if (ObjectId.isValid(search))
+    {
+        userId = new ObjectId(search)
+    }
     console.log(search)
+    const { role, hostel } = req.body;
     if (role === "admin") {
         try {   
             if (search === 'null') {
+                console.log("hi")
                 const submission = await userWriteForm.aggregate([{
                     $lookup: {
                         from: "logins",
@@ -24,7 +31,11 @@ const showSubmissions = async (req, res) => {
                 res.json(submission);
             }
             else {
-                console.log("prefffered?")
+                if (search === 'Pending') {
+                    search = 'pending'
+                    console.log(search)
+                }
+                // console.log("prefffered?")
                  const submission = await userWriteForm.aggregate([{
                     $lookup: {
                         from: "logins",
@@ -78,6 +89,10 @@ const showSubmissions = async (req, res) => {
             }
             else {
                 // console.log("caretaker preffered :" + search)
+                if (search === 'Pending') {
+                    search = 'pending'
+                    console.log(search)
+                }
                  const submission = await userWriteForm.aggregate([{
                     $lookup: {
                         from: "logins",
@@ -108,7 +123,37 @@ const showSubmissions = async (req, res) => {
             console.log("error while showing the submissions" + err)
             res.status(500);
         }
-}
+    }
+    else if (role === 'student') {
+        try {
+            // console.log("hi student")
+            const submissions = await userWriteForm.aggregate([{
+                $lookup: {
+                    from: "logins",
+                    localField: "user_id",
+                    foreignField: "_id",
+                    as:"submissions"
+                }
+            },
+                {
+                $unwind:"$submissions"
+                }
+                , {
+                    $match: {
+                        user_id:  userId
+                    }
+                }
+            ])
+            // console.log(submissions)
+            res.json(submissions)
+        }
+
+        catch (err) {
+            res.json({
+                "error": "Error while showing the submissions for students"
+            })
+        }
+    }
 }
 
 

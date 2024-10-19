@@ -13,8 +13,8 @@ function AddUser() {
   const [roleFilter, setRoleFilter] = useState('');
   const [hostelFilter, setHostelFilter] = useState('');
 
-  const viewBrief = (userId) => {
-    navigate(`/viewReport/${userId}`);
+  const viewUser = (userId) => {
+    navigate(`/user/${userId}`);
   };
 
   useEffect(() => {
@@ -138,7 +138,7 @@ function AddUser() {
                 <div className="UserList">
                   <h1>{user.room || '-'}</h1>
                 </div>
-                <div className="UserList" onClick={() => viewBrief(user._id)}>
+                <div className="UserList" onClick={() => viewUser(user._id)}>
                   <div className="eye">
                     <FaRegEye />
                   </div>

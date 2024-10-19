@@ -4,6 +4,7 @@ const Schema = mongoose.Schema({
     user_id: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'logins',
+        index:true,
         required: [true, "user id not got from token"]
     },
     domain: {

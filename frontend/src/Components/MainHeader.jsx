@@ -13,7 +13,8 @@ function MainHeader() {
  
 
   const handleProfileClick = async () => {
-    const token = Cookies.get('JWT'); // Get the JWT from cookies
+    const token = Cookies.get('JWT');
+    // Get the JWT from cookies
     if (!token) {
       console.error('No token found, please log in.');
       return;

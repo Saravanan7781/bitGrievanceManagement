@@ -35,20 +35,24 @@
 .studentDetailContent{
     width: 50%;
     display: flex;
-    align-items: center;
+    /* align-items: center; */
     justify-content: center;
 }
 
 .userStudent{
     display: grid;
     grid-template-columns: auto auto;
-    column-gap: 10%;
-    row-gap: 10%;
+        column-gap: 10%;
+        row-gap: 10%;
     font-family: "Poppins", sans-serif;
      /* background-color: #E6E6FA; */
     font-weight: 400;
   
     /* font-style: normal; */
+}
+
+.userImage{
+    border-radius: 3ch  ;
 }
 
 .userProfileCaption{

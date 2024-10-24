@@ -88,8 +88,8 @@ const UserProfile = () => {
                   )}
                </div>
                <div className='userIcon'>
-                  <FaUser size={100} />
-                  <p><strong>{user.role}</strong></p>
+                  <img src={user.image || 0} className="userImage"/>
+                  <p><strong>{user.role[0].toUpperCase()+user.role.slice(1)}</strong></p>
                </div>
             </div>
          </div>

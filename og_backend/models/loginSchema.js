@@ -15,7 +15,10 @@ rollno: { type: String }, // For students
   room: { type: String }, // For students
   hostel: { type: String}, // For all users
   caretakerName: { type: String }, // For students
-  role: { type: String, enum: ['student', 'caretaker', 'admin'], required: true } // Define roles
+  role: { type: String, enum: ['student', 'caretaker', 'admin'], required: true },
+  image: {
+    type:String
+  }
 
 });
 

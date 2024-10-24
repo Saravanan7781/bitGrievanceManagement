@@ -16,6 +16,7 @@ function Home() {
   useEffect(() => {
     const checkToken = async () => {
       if (!token) {
+       
         navigate('/');
         return;
       }
@@ -25,6 +26,7 @@ function Home() {
             Authorization: `Bearer ${token}`
           }
         })
+       
         setRealResponse(response.data);
       }
 
@@ -42,7 +44,7 @@ function Home() {
   return (
     (realResponse.role === 'admin') ?
       (<AdminHome />) :
-      (realResponse.role) == 'caretaker' ? (<CaretakerHome />) : (<UserWriteForm />)
+      (realResponse.role) === 'caretaker' ? (<CaretakerHome />) :(realResponse.role==='student')?(<UserWriteForm />):(<h1>Somone</h1>)
    
   );
 }

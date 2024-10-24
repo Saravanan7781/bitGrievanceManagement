@@ -20,7 +20,7 @@ const Schema = mongoose.Schema({
     },
     status: {
         type: String,
-        enum: ['pending', 'rejected','resolved'],
+        enum: ['pending', 'rejected','resolved','flagged','rectified'],
         default:"pending"
     }
 

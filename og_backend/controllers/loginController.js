@@ -24,12 +24,14 @@ const loginController = asyncHandler(
                     throw new Error("Email or password is incorrect");
                 }
                 else {
-                    console.log("user's data received from db")
                     let token = jwt.sign({
-                        user: await loginDB.findOne({ email }).select('-password')
+                        user: await loginDB.findOne({ email }).select('-password -image ')
                     }, process.env.TOP_SECRET_KEY, {
                         expiresIn: '30m'
                     });
+                    
+                    console.log(token)
+
     
                     res.json({
                         token

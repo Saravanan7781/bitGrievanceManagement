@@ -1,14 +1,19 @@
 import {React,useEffect,useState} from 'react'
 import '../../Css/careTaker/briefReport.css'
-import { useParams } from 'react-router-dom';
+import { useParams,useNavigate} from 'react-router-dom';
 import axios from 'axios';
+import Cookies from 'js-cookie'
+
 
 function BriefReport() {
   const { id } = useParams();
- 
+  const navigate = useNavigate();
+  const [user, SetUser] = useState();
   const [response, setResponse] = useState();
   const [status, setStatus] = useState(null);
   const [proof, setProof] = useState(null);
+  const token = Cookies.get('JWT');
+  
   useEffect(() => {
     const fetchDetails = async () => {
       try { 
@@ -26,11 +31,34 @@ function BriefReport() {
   }, [id]);   
 
   useEffect(() => {
-    if (response !== null) {
-      console.log("response received")
-      console.log(response);
+    const checkToken = async () => {
+      if (!token) {
+       
+        navigate('/');
+        return;
+      }
+      else {
+        const response = await axios.get('http://127.0.0.27:7777/api/user/current', {
+          headers: {
+            Authorization: `Bearer ${token}`
+          }
+        })
+       
+        SetUser(response.data);
+      }
+
     }
-  },[response])
+    checkToken()
+  },
+    []
+  )
+
+  useEffect(() => {
+    if (user !== null) {
+      console.log("response received")
+      console.log(user);
+    }
+  },[user])
 
   const acceptOrReject = async (ans) => {
     const output = await axios.get(`http://127.0.0.27:7777/api/user/submissions/submissionApproval/${id}?status=${ans}`)
@@ -103,25 +131,44 @@ function BriefReport() {
                 <div className="status">
                   <p><strong>Status:</strong></p>
                   <div className="responseStatus">
-                    {response.status === 'Resolved' ?
+                    {(response.status==='Rectified' && user.role==='student')?
+                       (<div className='optionalStatus'>
+                        <p className='approveStatus' onClick={()=> acceptOrReject('Resolved')}>Resolve</p>
+                        <p className='rejectStatus' onClick={() => acceptOrReject('Flagged')}>Flag</p>
+                      </div>)
+                        //part to change
+                        :( response.status === 'Resolved' )?
                       
                       (
                         <p className='approveStatus'>Resolved</p>
                      
-                      )
-                      : response.status === 'Rejected' ?
+                      ) 
+                      : response.status === 'Rejected' ?  
                         (
                         <p className='rejectStatus'>Rejected</p>
                      
+                            ) : 
+                            response.status === 'Flagged' ?  
+                        (
+                        <p className='rejectStatus'>Flagged</p>
+                              ) :
+                              response.status === 'Rejected' ?  
+                        (
+                        <p className='rejectStatus'>Rectified</p>
+                     
                       )
-                        
-                        : 
-                       (<div className='optionalStatus'>
-                        <p className='approveStatus' onClick={()=> acceptOrReject('Resolved')}>Approve</p>
+                             :((user.role==='admin' || user.role==='caretaker') && (response.status==='pending' || response.status==='Flagged') )?
+                            (<div className='optionalStatus'>
+                        <p className='approveStatus' onClick={()=> acceptOrReject('Rectified')}>Rectified</p>
                         <p className='rejectStatus' onClick={() => acceptOrReject('Rejected')}>Reject</p>
                       </div>
-                      )
-                    }</div>
+                              ) : (
+                                <>
+                                </>
+                            )
+                            
+                      }
+                    </div>
                 </div>
               </div>
             </div>

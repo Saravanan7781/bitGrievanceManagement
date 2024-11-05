@@ -24,9 +24,7 @@ const viewSubmissionController = async (req, res) => {
             }
         ]);
         //  console.log(submission)
-        res.json(submission);
-        
-       
+        res.json(submission);    
     }
     catch (err) {
         res.status(500).json({ message: "Error fetching submission" });

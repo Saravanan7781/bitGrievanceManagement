@@ -1,7 +1,7 @@
 import React from 'react';
 import '../../Css/admin/Sidebar.css';
 import { useNavigate } from 'react-router-dom';
-
+import { FiFlag } from "react-icons/fi";
 import { SlLogout } from "react-icons/sl";
 import { GoInbox } from "react-icons/go";
 import { AiOutlineMessage  } from "react-icons/ai";
@@ -93,6 +93,20 @@ function Sidebar() {
                     </a>
                     <div className="words">
                       <p className={`hideWords ${showSidebar ? `showWords` : ``}`}>Inbox</p>
+
+                    </div>
+                  </div>
+                </div >
+              </li>
+              <li>
+                <div className="sidebarInnerEle"
+                  onClick={() => navigate('/inbox?search=Flagged')}>
+                  <div className="temp">
+                    <a>
+                      <FiFlag size={25} />
+                    </a>
+                    <div className="words">
+                      <p className={`hideWords ${showSidebar ? `showWords` : ``}`}>Flag</p>
 
                     </div>
                   </div>

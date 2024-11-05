@@ -38,8 +38,59 @@ h2 {
     transform: translateY(6.7%);
     align-items: flex-start;
     padding: 2% 3% 2% 3%;
+    justify-content: space-evenly   ;
 }
 
+/* Container for filter */
+.filterContainer {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    gap: 10px;
+    font-family: Arial, sans-serif;
+}
+
+/* Label for filter */
+.filterContainer label {
+    font-size: 16px;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Dropdown for filter */
+#statusFilter {
+    padding: 8px 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    color: #333;
+    cursor: pointer;
+    outline: none;
+    transition: background-color 0.3s ease;
+}
+
+/* Change dropdown color on hover */
+#statusFilter:hover {
+    background-color: #e6e6e6;
+}
+
+/* Change dropdown color on focus */
+#statusFilter:focus {
+    border-color: #8869f4;
+    background-color: #fff;
+}
+
+/* Adjust font color for selected options */
+#statusFilter option {
+    color: #333;
+    background-color: #f9f9f9;
+}
+
+#statusFilter option:hover {
+    color: #333;
+    background-color: #8869f4;
+}
 
 label {
     margin-bottom: 2%;
@@ -49,6 +100,54 @@ label {
 p {
     margin-bottom: 0%;
     text-align: left;
+}
+
+.DescriptionInput{
+    padding: 1.5%;
+}
+
+.customAlert {
+    background-color: #4caf50;
+    /* Green background for success */
+    color: white;
+    /* White text */
+    padding: 10px;
+    margin: 15px 0;
+    text-align: center;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    width: 200px;
+    z-index: 1000;
+    display: flex;
+  position: absolute;
+    /* align-items: center; */
+    transition: opacity 0.5s ease;
+    top: -100%;
+    left: 43%;
+    animation: alert 5s ease-out ;
+    
+}
+
+@keyframes alert {
+
+    0%{
+        top: 0
+    }
+
+    75%{
+        top:0;
+    }
+
+    100%{
+        top: -100;
+        /* background-color: black; */
+    }
+}
+
+.DescriptionInput:focus{
+    outline: none;
+   
 }
 
 .dropdown {

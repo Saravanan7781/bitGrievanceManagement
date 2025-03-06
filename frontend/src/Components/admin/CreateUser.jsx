@@ -25,6 +25,7 @@ const CreateUser = () => {
     try {
       await axios.post('http://127.0.0.27:7777/api/users', userData);
       alert('User created successfully!');
+      console.log("worked");
     } catch (err) {
       console.error(err);
     }
@@ -116,7 +117,8 @@ const CreateUser = () => {
           <option value="South Bhavani">South Bhavani</option>
           </select>
               </>)}
-               <button type="submit" className="createUserButton">Create User</button>
+            <button type="submit" className="createUserButton"
+              onClick={ handleSubmit}>Create User</button>
           </div>
           
           

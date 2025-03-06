@@ -4,7 +4,6 @@ const dotenv = require('dotenv');
 const bodyParser = require('body-parser')
 dotenv.config();
 
-
 const loginRouter = require('./routes/loginRoute');
 const userWriteFormRouter = require('./routes/userWriteForm');
 const submissionRouter = require('./routes/submissionsRoutes');

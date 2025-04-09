@@ -16,7 +16,7 @@ function BriefReport() {
   useEffect(() => {
     const fetchDetails = async () => {
       try {
-        const res = await axios.get(`http://127.0.0.27:7777/api/user/viewSubmission/${id}`);
+        const res = await axios.get(`https://bitgrievancemanagementbackendservice.onrender.com/api/user/viewSubmission/${id}`);
         setResponse(res.data[0]);
         setProof(res.data[0].proof);
       } catch (err) {
@@ -32,7 +32,7 @@ function BriefReport() {
         navigate('/');
         return;
       } else {
-        const response = await axios.get('http://127.0.0.27:7777/api/user/current', {
+        const response = await axios.get('https://bitgrievancemanagementbackendservice.onrender.com/api/user/current', {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -51,7 +51,7 @@ function BriefReport() {
   }, [user]);
 
   const acceptOrReject = async (ans) => {
-    const output = await axios.get(`http://127.0.0.27:7777/api/user/submissions/submissionApproval/${id}?status=${ans}`);
+    const output = await axios.get(`https://bitgrievancemanagementbackendservice.onrender.com/api/user/submissions/submissionApproval/${id}?status=${ans}`);
     setResponse((prevResponse) => ({ ...prevResponse, status: ans }));
   };
 

@@ -15,7 +15,7 @@ function UserWriteForm() {
     const getUserId = async () => {
       let token = Cookies.get('JWT');
       try {
-        const answer = await axios.get('http://127.0.0.27:7777/api/user/current', {
+        const answer = await axios.get('https://bitgrievancemanagementbackendservice.onrender.com/api/user/current', {
           headers: { Authorization: `Bearer ${token}` }
         });
         setUserId(answer.data);
@@ -49,7 +49,7 @@ function UserWriteForm() {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const response = await axios.post('http://localhost:7777/api/user/submitUserWriteForm', {
+      const response = await axios.post('https://bitgrievancemanagementbackendservice.onrender.com/api/user/submitUserWriteForm', {
         user_id: userId._id,
         domain: selectedOption,
         desc: textValue,

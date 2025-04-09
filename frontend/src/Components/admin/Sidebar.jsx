@@ -43,7 +43,7 @@ function Sidebar() {
         return;
       }
       else {
-        const response = await axios.get('http://127.0.0.27:7777/api/user/current', {
+        const response = await axios.get('https://bitgrievancemanagementbackendservice.onrender.com/api/user/current', {
           headers: {
             Authorization: `Bearer ${token}`
           }

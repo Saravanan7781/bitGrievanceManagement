@@ -25,7 +25,7 @@ function InboxAdmin() {
                 return;
             }
             try {
-                const temp = await axios.get('http://127.0.0.27:7777/api/user/current', {
+                const temp = await axios.get('https://bitgrievancemanagementbackendservice.onrender.com/api/user/current', {
                     headers: { Authorization: `Bearer ${token}` }
                 });
                 setUserData(temp.data);
@@ -43,18 +43,18 @@ function InboxAdmin() {
 
             try {
                 if (userData.role === 'caretaker' && preferred === 'Flagged') {
-                    const result = await axios.post(`http://127.0.0.27:7777/api/user/submissions/flaggedComplaints?role=${userData.role}`, {
+                    const result = await axios.post(`https://bitgrievancemanagementbackendservice.onrender.com/api/user/submissions/flaggedComplaints?role=${userData.role}`, {
                         hostel: userData.hostel
                     });
                     setResponse(result.data);
                 } else if (userData.role !== 'student') {
-                    const res = await axios.post(`http://127.0.0.27:7777/api/user/submissions?search=${preferred}`, {
+                    const res = await axios.post(`https://bitgrievancemanagementbackendservice.onrender.com/api/user/submissions?search=${preferred}`, {
                         role: userData.role,
                         hostel: userData.hostel
                     });
                     setResponse(res.data);
                 } else if (userData.role === 'student') {
-                    const result = await axios.post(`http://127.0.0.1:7777/api/user/submissions?search=${userData._id}`, {
+                    const result = await axios.post(`https://bitgrievancemanagementbackendservice.onrender.com/api/user/submissions?search=${userData._id}`, {
                         role: userData.role
                     });
                     setResponse(result.data);

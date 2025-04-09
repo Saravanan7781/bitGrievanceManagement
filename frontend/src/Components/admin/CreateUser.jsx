@@ -23,7 +23,7 @@ const CreateUser = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://127.0.0.27:7777/api/users', userData);
+      await axios.post('https://bitgrievancemanagementbackendservice.onrender.com/api/users', userData);
       alert('User created successfully!');
       console.log("worked");
     } catch (err) {

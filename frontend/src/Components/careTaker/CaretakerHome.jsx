@@ -36,7 +36,7 @@ function CaretakerHome() {
         return;
       }
       else {
-        const response = await axios.get('http://127.0.0.27:7777/api/user/current', {
+        const response = await axios.get('https://bitgrievancemanagementbackendservice.onrender.com/api/user/current', {
           headers: {
             Authorization: `Bearer ${token}`
           }
@@ -54,7 +54,7 @@ function CaretakerHome() {
 
   useEffect(() => {
     const getDashboardDetails = async (realResponse) => {
-        const dashboardResult = await axios.post('http://127.0.0.27:7777/api/user/adminCount', {
+        const dashboardResult = await axios.post('https://bitgrievancemanagementbackendservice.onrender.com/api/user/adminCount', {
           role: realResponse.role,
           hostel: realResponse.hostel 
         }

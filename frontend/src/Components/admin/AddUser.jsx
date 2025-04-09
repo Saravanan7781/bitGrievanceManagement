@@ -19,7 +19,7 @@ function AddUser() {
 
   useEffect(() => {
     const fetchUsers = async () => {
-      let res = await axios.get('http://127.0.0.27:7777/api/users')
+      let res = await axios.get('https://bitgrievancemanagementbackendservice.onrender.com/api/users')
         .then(data => data.data)
         .catch(err => console.log("Error while getting the users in axios"));
       setResponse(res);

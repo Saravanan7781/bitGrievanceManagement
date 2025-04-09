@@ -16,7 +16,7 @@ const UserProfile = () => {
    useEffect(() => {
        const fetchUser = async () => {
          try {
-            const res = await axios.get(`http://127.0.0.1:7777/api/users/${id}`, {
+            const res = await axios.get(`https://bitgrievancemanagementbackendservice.onrender.com/api/users/${id}`, {
                headers: {
                   Authorization: `Bearer ${token}` // Include token in the header
                }

@@ -13,6 +13,13 @@ body{
 }
 
 
+@media screen and (max-width: 768px) {
+  body{
+    background-color: #F5F5F5;
+  }
+}
+
+
 
 
 
